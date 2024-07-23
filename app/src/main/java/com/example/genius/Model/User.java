@@ -27,6 +27,7 @@ public class User implements Parcelable
     public String name;
     public String password;
     public String phone;
+    public String score;
     Long lastUpdated= new Long(0);
 
     @NonNull
@@ -70,12 +71,13 @@ public class User implements Parcelable
         this.lastUpdated = lastUpdated;
     }
 
-    public User(String name, String password, String email,String phone)
+    public User(String name, String password, String email,String phone, String score)
     {
         this.name=name;
         this.password=password;
         this.email=email;
         this.phone=phone;
+        this.score=score;
     }
 
     public User()
@@ -84,6 +86,7 @@ public class User implements Parcelable
         password=" ";
         email=" ";
         phone=" ";
+        score=" ";
     }
     public User(User u)
     {
@@ -91,6 +94,7 @@ public class User implements Parcelable
         this.password=u.password;
         this.email=u.email;
         this.phone=u.phone;
+        this.score=u.score;
     }
 
     public Map<String,Object> toJson()
@@ -100,6 +104,7 @@ public class User implements Parcelable
         json.put("password", getPassword());
         json.put("email", getEmail());
         json.put("phone", getPhone());
+        json.put("score", getScore());
         json.put(LAST_UPDATED, FieldValue.serverTimestamp());
         return json;
     }
@@ -112,7 +117,8 @@ public class User implements Parcelable
         String password=(String)json.get("password");
         String name=(String)json.get("name");
         String phone=(String)json.get("phone");
-        User user = new User(name,password,email,phone);
+        String score=(String)json.get("score");
+        User user = new User(name,password,email,phone, score);
         Timestamp ts = (Timestamp)json.get(LAST_UPDATED);
         user.setLastUpdated(new Long(ts.getSeconds()));
         return user;
@@ -144,6 +150,7 @@ public class User implements Parcelable
         dest.writeString(name);
         dest.writeString(password);
         dest.writeString(phone);
+        dest.writeString(score);
         if (lastUpdated == null) {
             dest.writeByte((byte) 0);
         } else {
@@ -157,6 +164,7 @@ public class User implements Parcelable
         name = in.readString();
         password = in.readString();
         phone = in.readString();
+        score = in.readString();
         if (in.readByte() == 0) {
             lastUpdated = null;
         } else {
@@ -175,4 +183,12 @@ public class User implements Parcelable
             return new User[size];
         }
     };
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
 }

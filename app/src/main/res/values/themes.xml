@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.Genius" parent="Base.Theme.Genius" />
+
+    <style name="roundimageview" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+        <item name="color">@color/white</item>
+    </style>
+
 </resources>
