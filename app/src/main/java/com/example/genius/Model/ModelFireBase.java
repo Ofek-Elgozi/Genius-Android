@@ -108,13 +108,13 @@ public class ModelFireBase
                 });
     }
 
-    public void saveImage(Bitmap bitmap, String Car_username, Model.SaveImageListener listener)
+    public void saveImage(Bitmap bitmap, String username, Model.SaveImageListener listener)
     {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         // Create a storage reference from our app
         StorageReference storageRef = storage.getReference();
         // Create a reference to "mountains.jpg"
-        StorageReference imageRef = storageRef.child("cars/" + Car_username + ".jpg");
+        StorageReference imageRef = storageRef.child("users/" + username + ".jpg");
         // Get the data from an ImageView as bytes
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);

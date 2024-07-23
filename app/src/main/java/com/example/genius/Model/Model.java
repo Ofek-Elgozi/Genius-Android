@@ -28,7 +28,7 @@ public class Model
     {
         //1.get local last update
         Long localLastUpdate = User.getLocalLastUpdated();
-        //2.get all cars record since local last update from firebase
+        //2.get all users record since local last update from firebase
         modelFireBase.getAllUsers(localLastUpdate, new getAllUsersListener()
         {
             @Override
@@ -87,8 +87,8 @@ public class Model
         void onComplete(String url);
     }
 
-    public void saveImage(Bitmap bitmap, String Car_username, SaveImageListener listener)
+    public void saveImage(Bitmap bitmap, String username, SaveImageListener listener)
     {
-        modelFireBase.saveImage(bitmap,Car_username, listener);
+        modelFireBase.saveImage(bitmap,username, listener);
     }
 }
