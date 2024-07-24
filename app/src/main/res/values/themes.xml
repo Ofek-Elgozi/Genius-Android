@@ -2,7 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Genius" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:colorBackground">#FF515151</item>
+        <item name="colorPrimary">#FF515151</item> <!-- Set the primary color to grey -->
+        <item name="colorPrimaryVariant">#FF515151</item> <!-- Ensure primary variant is also grey -->
     </style>
 
     <style name="Theme.Genius" parent="Base.Theme.Genius" />
@@ -12,5 +14,4 @@
         <item name="cornerSize">20dp</item>
         <item name="color">@color/white</item>
     </style>
-
 </resources>
