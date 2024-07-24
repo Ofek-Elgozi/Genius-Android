@@ -39,15 +39,19 @@ public class UserProfileFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.gethomepage_menu, menu);
+        inflater.inflate(R.menu.homeorlogout_menu, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemID = item.getItemId();
-        if (itemID == R.id.home_menu)
+        if (itemID == R.id.menu_home)
         {
             Navigation.findNavController(view).popBackStack();
+        }
+        else if (itemID == R.id.menu_logout) {
+            FirebaseAuth.getInstance().signOut();
+            Navigation.findNavController(view).navigate(R.id.action_userProfileFragment_to_loginFragment);
         }
         return true;
     }
