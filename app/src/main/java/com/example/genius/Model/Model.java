@@ -24,6 +24,8 @@ public class Model
         void onComplete(List<User> user_data);
     }
 
+    MutableLiveData<List<User>> userListLd = new MutableLiveData<List<User>>();
+
     public void reloadUserList()
     {
         //1.get local last update
@@ -49,9 +51,21 @@ public class Model
                         }
                     }
                     User.setLocalLastUpdated(lLastUpdate);
+                    List<User> userList = AppLocalDB.db.userDao().getAllUsers();
+                    userListLd.postValue(userList);
                 });
             }
         });
+    }
+
+    public MutableLiveData<List<User>> getAllUsersData()
+    {
+        return userListLd;
+    }
+
+    public LiveData<List<User>> getUserBymail(String email)
+    {
+        return AppLocalDB.db.userDao().getUserByEmail(email);
     }
 
     public interface getUserByEmailListener
