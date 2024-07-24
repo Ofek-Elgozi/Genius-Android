@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Genius" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Genius" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
         <item name="android:colorBackground">#FF515151</item>
         <item name="colorPrimary">#FF515151</item> <!-- Set the primary color to grey -->
