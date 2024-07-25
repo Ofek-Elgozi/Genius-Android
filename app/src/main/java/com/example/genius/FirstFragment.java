@@ -31,13 +31,13 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                if (user != null)
+                if (user == null)
                 {
+                    Navigation.findNavController(v).navigate(R.id.loginFragment);
+                } else {
                     Toast.makeText(getActivity(), "Welcome To Genius!", Toast.LENGTH_SHORT).show();
                     FirstFragmentDirections.ActionFirstFragmentToMainPageFragment action = FirstFragmentDirections.actionFirstFragmentToMainPageFragment(user.getEmail());
                     Navigation.findNavController(v).navigate(action);
-                } else {
-                    Navigation.findNavController(v).navigate(R.id.loginFragment);
                 }
             }
         });

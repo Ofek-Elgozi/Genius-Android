@@ -31,6 +31,16 @@ public class User implements Parcelable
     public String group="0";
     public String isTeacher="0";
 
+    public String avatarUrl;
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
     public String getGroup() {
         return group;
     }
@@ -89,7 +99,7 @@ public class User implements Parcelable
         this.lastUpdated = lastUpdated;
     }
 
-    public User(String name, String password, String email,String phone, String score, String group, String isTeacher)
+    public User(String name, String password, String email,String phone, String score, String group, String isTeacher, String avatarUrl)
     {
         this.name=name;
         this.password=password;
@@ -132,6 +142,7 @@ public class User implements Parcelable
         json.put("score", getScore());
         json.put("group", getGroup());
         json.put("isTeacher", getIsTeacher());
+        json.put("avatarUrl", getAvatarUrl());
         json.put(LAST_UPDATED, FieldValue.serverTimestamp());
         return json;
     }
@@ -147,7 +158,9 @@ public class User implements Parcelable
         String score=(String)json.get("score");
         String group=(String)json.get("group");
         String isTeacher=(String)json.get("isTeacher");
-        User user = new User(name,password,email,phone, score, group,isTeacher);
+        String avatarUrl=(String)json.get("avatarUrl");
+        User user = new User(name,password,email,phone, score, group,isTeacher,avatarUrl);
+        user.setAvatarUrl(avatarUrl);
         Timestamp ts = (Timestamp)json.get(LAST_UPDATED);
         user.setLastUpdated(new Long(ts.getSeconds()));
         return user;
@@ -182,6 +195,7 @@ public class User implements Parcelable
         dest.writeString(score);
         dest.writeString(group);
         dest.writeString(isTeacher);
+        dest.writeString(avatarUrl);
         if (lastUpdated == null) {
             dest.writeByte((byte) 0);
         } else {
@@ -198,6 +212,7 @@ public class User implements Parcelable
         score = in.readString();
         group = in.readString();
         isTeacher = in.readString();
+        avatarUrl = in.readString();
         if (in.readByte() == 0) {
             lastUpdated = null;
         } else {
