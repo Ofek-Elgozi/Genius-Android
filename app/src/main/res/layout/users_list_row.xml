@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:backgroundTint="#000000">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/userlistrow_imagev"
@@ -14,10 +15,10 @@
         android:layout_marginBottom="8dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        app:shapeAppearanceOverlay="@style/roundimageview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundimageview"
         app:srcCompat="@drawable/avatar" />
 
     <TextView
@@ -26,8 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:background="#E3E3E3"
-        android:backgroundTint="#E3E3E3"
+        android:backgroundTint="#000000"
         android:text="Name:"
+        android:textColor="#FFFFFF"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
@@ -39,9 +41,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:background="#E3E3E3"
-        android:backgroundTint="#E3E3E3"
+        android:background="#000000"
+        android:backgroundTint="#000000"
         android:text="Phone:"
+        android:textColor="#FFFFFF"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
@@ -54,8 +57,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:background="#E3E3E3"
-        android:backgroundTint="#E3E3E3"
+        android:backgroundTint="#000000"
         android:text="Score:"
+        android:textColor="#FFFFFF"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
@@ -67,8 +71,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:background="#E3E3E3"
-        android:backgroundTint="#E3E3E3"
-        android:textColor="#64DD17"
+        android:backgroundTint="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView32"
@@ -83,8 +87,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:background="#E3E3E3"
-        android:backgroundTint="#E3E3E3"
-        android:textColor="#64DD17"
+        android:backgroundTint="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView33"
@@ -99,13 +103,15 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:background="#E3E3E3"
-        android:backgroundTint="#E3E3E3"
-        android:textColor="#64DD17"
+        android:backgroundTint="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView35"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView35"
-        app:layout_constraintTop_toTopOf="@+id/textView35" />
+        app:layout_constraintTop_toTopOf="@+id/textView35"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
