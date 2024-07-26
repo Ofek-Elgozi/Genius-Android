@@ -1,11 +1,15 @@
 package com.example.genius;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,9 +23,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.genius.Model.Model;
 import com.example.genius.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 
 public class UserProfileFragment extends Fragment {
@@ -30,20 +37,29 @@ public class UserProfileFragment extends Fragment {
     ImageView avatarImg;
     ProgressBar progressBar;
 
+    UserProfileFragmentViewModel viewModel;
+
+    SwipeRefreshLayout userprofile_swipeRefresh;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        viewModel = new ViewModelProvider(this).get(UserProfileFragmentViewModel.class);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_user_profile, container, false);
         user = UserProfileFragmentArgs.fromBundle(getArguments()).getUser();
+        viewModel.setUser(user);
 
         progressBar = view.findViewById(R.id.userprofile_progressBar);
         progressBar.setVisibility(View.GONE);
 
         avatarImg = view.findViewById(R.id.profile_pic);
         avatarImg.setImageResource(R.drawable.avatar);
-        if(user.getAvatarUrl() != null)
-        {
+        if (user.getAvatarUrl() != null) {
             Picasso.get().load(user.getAvatarUrl()).placeholder(R.drawable.avatar).into(avatarImg);
         }
 
@@ -59,21 +75,34 @@ public class UserProfileFragment extends Fragment {
         TextView text_group = view.findViewById(R.id.profile_group_tv);
         text_group.setText(user.group);
 
-        Button editBtn= view.findViewById(R.id.editprofile_btn);
-        editBtn.setOnClickListener(new View.OnClickListener()
-        {
+        Button editBtn = view.findViewById(R.id.editprofile_btn);
+        editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
                 UserProfileFragmentDirections.ActionUserProfileFragmentToEditUserProfileFragment action = UserProfileFragmentDirections.actionUserProfileFragmentToEditUserProfileFragment(user);
                 Navigation.findNavController(v).navigate(action);
             }
         });
 
+        userprofile_swipeRefresh = view.findViewById(R.id.userprofile_SwipeRefresh);
+        userprofile_swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                userprofile_swipeRefresh.setRefreshing(false);  // Add this line to trigger data refresh
+            }
+        });
+
+        viewModel.getData().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> users) {
+                userprofile_swipeRefresh.setRefreshing(false);
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+
         setHasOptionsMenu(true);
         return view;
-
     }
 
     @Override
@@ -85,11 +114,9 @@ public class UserProfileFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemID = item.getItemId();
-        if (itemID == R.id.menu_home)
-        {
+        if (itemID == R.id.menu_home) {
             Navigation.findNavController(view).popBackStack();
-        }
-        else if (itemID == R.id.menu_logout) {
+        } else if (itemID == R.id.menu_logout) {
             FirebaseAuth.getInstance().signOut();
             Navigation.findNavController(view).navigate(R.id.action_userProfileFragment_to_loginFragment);
         }

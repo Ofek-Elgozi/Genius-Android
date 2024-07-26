@@ -17,7 +17,7 @@ import com.example.genius.Model.User;
 
 
 public class MainPageFragment extends Fragment {
-    User u;
+    User updateduser;
     String temp_email;
     View view;
 
@@ -29,8 +29,9 @@ public class MainPageFragment extends Fragment {
         temp_email = MainPageFragmentArgs.fromBundle(getArguments()).getEmail();
         Model.instance.getUserByEmail(temp_email, new Model.getUserByEmailListener() {
             @Override
-            public void onComplete(User user) {
-                u = user;
+            public void onComplete(User user)
+            {
+                updateduser = new User(user);
             }
         });
         setHasOptionsMenu(true);
@@ -46,9 +47,9 @@ public class MainPageFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemID = item.getItemId();
-        if (itemID == R.id.menu_profile)
+        if (itemID == R.id.menu_profile && updateduser!=null)
         {
-            MainPageFragmentDirections.ActionMainPageFragmentToUserProfileFragment action = MainPageFragmentDirections.actionMainPageFragmentToUserProfileFragment(u);
+            MainPageFragmentDirections.ActionMainPageFragmentToUserProfileFragment action = MainPageFragmentDirections.actionMainPageFragmentToUserProfileFragment(updateduser);
             Navigation.findNavController(view).navigate(action);
         }
         return true;

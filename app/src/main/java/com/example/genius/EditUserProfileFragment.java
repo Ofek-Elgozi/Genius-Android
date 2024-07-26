@@ -32,6 +32,9 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class EditUserProfileFragment extends Fragment {
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+    final static int RESAULT_SUCCESS = 0;
     User user;
     View view;
     ImageView avatarImg;
