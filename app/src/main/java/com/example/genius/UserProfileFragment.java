@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
@@ -41,6 +42,8 @@ public class UserProfileFragment extends Fragment {
 
     SwipeRefreshLayout userprofile_swipeRefresh;
 
+    FragmentTransaction ft;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -50,6 +53,8 @@ public class UserProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        ft = getFragmentManager().beginTransaction();
+        ft.detach(this).attach(this).commit();
         view = inflater.inflate(R.layout.fragment_user_profile, container, false);
         user = UserProfileFragmentArgs.fromBundle(getArguments()).getUser();
         viewModel.setUser(user);
@@ -82,22 +87,6 @@ public class UserProfileFragment extends Fragment {
                 progressBar.setVisibility(View.VISIBLE);
                 UserProfileFragmentDirections.ActionUserProfileFragmentToEditUserProfileFragment action = UserProfileFragmentDirections.actionUserProfileFragmentToEditUserProfileFragment(user);
                 Navigation.findNavController(v).navigate(action);
-            }
-        });
-
-        userprofile_swipeRefresh = view.findViewById(R.id.userprofile_SwipeRefresh);
-        userprofile_swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                userprofile_swipeRefresh.setRefreshing(false);  // Add this line to trigger data refresh
-            }
-        });
-
-        viewModel.getData().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> users) {
-                userprofile_swipeRefresh.setRefreshing(false);
-                progressBar.setVisibility(View.GONE);
             }
         });
 

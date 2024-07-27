@@ -97,13 +97,18 @@ public class EditUserProfileFragment extends Fragment {
                 updateduser.setPassword(user.password);
                 updateduser.setEmail(user.email);
                 updateduser.setScore(user.score);
-                if(user.getAvatarUrl() != null)
+                if(bitmap != null)
                 {
-                    updateduser.setAvatarUrl(user.getAvatarUrl());
+
                     Model.instance.addUser(updateduser,()->
                     {
+                        Model.instance.saveImage(bitmap, user.getEmail(), url ->
+                        {
+                            updateduser.setAvatarUrl(url);
+                        });
                         Toast.makeText(getActivity(), "User Details successfully Edited", Toast.LENGTH_SHORT).show();
-                        Navigation.findNavController(v).popBackStack();
+                        EditUserProfileFragmentDirections.ActionEditUserProfileFragmentToMainPageFragment action = EditUserProfileFragmentDirections.actionEditUserProfileFragmentToMainPageFragment(updateduser.getEmail());
+                        Navigation.findNavController(v).navigate(action);
                     });
                 }
                 else
@@ -111,7 +116,8 @@ public class EditUserProfileFragment extends Fragment {
                     Model.instance.addUser(updateduser,()->
                     {
                         Toast.makeText(getActivity(), "User Details successfully Edited", Toast.LENGTH_SHORT).show();
-                        Navigation.findNavController(v).popBackStack();
+                        EditUserProfileFragmentDirections.ActionEditUserProfileFragmentToMainPageFragment action = EditUserProfileFragmentDirections.actionEditUserProfileFragmentToMainPageFragment(updateduser.getEmail());
+                        Navigation.findNavController(v).navigate(action);
                     });
                 }
             }

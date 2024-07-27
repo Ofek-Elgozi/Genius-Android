@@ -109,5 +109,8 @@
         <argument
             android:name="user"
             app:argType="com.example.genius.Model.User" />
+        <action
+            android:id="@+id/action_editUserProfileFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
     </fragment>
 </navigation>
