@@ -35,6 +35,10 @@ public class UserProfileFragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         viewModel = new ViewModelProvider(this).get(UserProfileFragmentViewModel.class);
+        user = UserProfileFragmentArgs.fromBundle(getArguments()).getUser();
+        if (user.getAvatarUrl() != null) {
+            Picasso.get().load(user.getAvatarUrl()).fetch();
+        }
     }
 
     @Override
@@ -48,6 +52,7 @@ public class UserProfileFragment extends Fragment {
 
         avatarImg = view.findViewById(R.id.profile_pic);
         avatarImg.setImageResource(R.drawable.avatar);
+        avatarImg.setVisibility(View.INVISIBLE); // Initially hide the ImageView
 
         TextView text_name = view.findViewById(R.id.profile_name_tv);
         TextView text_email = view.findViewById(R.id.profile_email_tv);
@@ -58,7 +63,28 @@ public class UserProfileFragment extends Fragment {
             if (updatedUser != null) {
                 user = updatedUser;
                 if (user.getAvatarUrl() != null) {
-                    Picasso.get().load(user.getAvatarUrl()).placeholder(R.drawable.avatar).into(avatarImg);
+                    avatarImg.postDelayed(() -> {
+                        Picasso.get()
+                                .load(user.getAvatarUrl())
+                                .noPlaceholder() // No placeholder
+                                .error(R.drawable.avatar) // Optional: show the default avatar if the image fails to load
+                                .into(avatarImg, new com.squareup.picasso.Callback() {
+                                    @Override
+                                    public void onSuccess() {
+                                        avatarImg.setVisibility(View.VISIBLE); // Make ImageView visible after successful load
+                                        avatarImg.setAlpha(0f);
+                                        avatarImg.animate().setDuration(300).alpha(1f).start(); // Fade in effect
+                                    }
+
+                                    @Override
+                                    public void onError(Exception e) {
+                                        avatarImg.setVisibility(View.VISIBLE); // Make ImageView visible even if there's an error
+                                    }
+                                });
+                    }, 100); // Slight delay before starting image load
+                } else {
+                    avatarImg.setVisibility(View.VISIBLE); // Make ImageView visible if there's no URL
+                    avatarImg.setImageResource(R.drawable.avatar);
                 }
                 text_name.setText(user.getName());
                 text_email.setText(user.getEmail());
