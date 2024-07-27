@@ -16,13 +16,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class FirstFragment extends Fragment {
-
+    View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        View view;
         view = inflater.inflate(R.layout.fragment_first, container, false);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Button StartBtn = view.findViewById(R.id.start_button);
@@ -31,13 +30,15 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                if (user == null)
+                if (user != null)
                 {
-                    Navigation.findNavController(v).navigate(R.id.loginFragment);
-                } else {
                     Toast.makeText(getActivity(), "Welcome To Genius!", Toast.LENGTH_SHORT).show();
                     FirstFragmentDirections.ActionFirstFragmentToMainPageFragment action = FirstFragmentDirections.actionFirstFragmentToMainPageFragment(user.getEmail());
                     Navigation.findNavController(v).navigate(action);
+                }
+                else
+                {
+                    Navigation.findNavController(v).navigate(R.id.loginFragment);
                 }
             }
         });

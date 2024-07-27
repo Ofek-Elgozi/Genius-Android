@@ -1,16 +1,12 @@
 package com.example.genius;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,25 +20,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.genius.Model.Model;
 import com.example.genius.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
-
-import java.util.List;
-
 
 public class UserProfileFragment extends Fragment {
     User user;
     View view;
     ImageView avatarImg;
     ProgressBar progressBar;
-
     UserProfileFragmentViewModel viewModel;
-
-    SwipeRefreshLayout userprofile_swipeRefresh;
-
-    FragmentTransaction ft;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -51,10 +38,7 @@ public class UserProfileFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        ft = getFragmentManager().beginTransaction();
-        ft.detach(this).attach(this).commit();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_user_profile, container, false);
         user = UserProfileFragmentArgs.fromBundle(getArguments()).getUser();
         viewModel.setUser(user);
@@ -64,30 +48,30 @@ public class UserProfileFragment extends Fragment {
 
         avatarImg = view.findViewById(R.id.profile_pic);
         avatarImg.setImageResource(R.drawable.avatar);
-        if (user.getAvatarUrl() != null) {
-            Picasso.get().load(user.getAvatarUrl()).placeholder(R.drawable.avatar).into(avatarImg);
-        }
 
         TextView text_name = view.findViewById(R.id.profile_name_tv);
-        text_name.setText(user.name);
-
         TextView text_email = view.findViewById(R.id.profile_email_tv);
-        text_email.setText(user.email);
-
         TextView text_phone = view.findViewById(R.id.profile_phone_tv);
-        text_phone.setText(user.phone);
-
         TextView text_group = view.findViewById(R.id.profile_group_tv);
-        text_group.setText(user.group);
+
+        viewModel.getUserLiveData().observe(getViewLifecycleOwner(), updatedUser -> {
+            if (updatedUser != null) {
+                user = updatedUser;
+                if (user.getAvatarUrl() != null) {
+                    Picasso.get().load(user.getAvatarUrl()).placeholder(R.drawable.avatar).into(avatarImg);
+                }
+                text_name.setText(user.getName());
+                text_email.setText(user.getEmail());
+                text_phone.setText(user.getPhone());
+                text_group.setText(user.getGroup());
+            }
+        });
 
         Button editBtn = view.findViewById(R.id.editprofile_btn);
-        editBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                UserProfileFragmentDirections.ActionUserProfileFragmentToEditUserProfileFragment action = UserProfileFragmentDirections.actionUserProfileFragmentToEditUserProfileFragment(user);
-                Navigation.findNavController(v).navigate(action);
-            }
+        editBtn.setOnClickListener(v -> {
+            progressBar.setVisibility(View.VISIBLE);
+            UserProfileFragmentDirections.ActionUserProfileFragmentToEditUserProfileFragment action = UserProfileFragmentDirections.actionUserProfileFragmentToEditUserProfileFragment(user);
+            Navigation.findNavController(v).navigate(action);
         });
 
         setHasOptionsMenu(true);
@@ -110,5 +94,12 @@ public class UserProfileFragment extends Fragment {
             Navigation.findNavController(view).navigate(R.id.action_userProfileFragment_to_loginFragment);
         }
         return true;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Refresh user data when fragment is resumed
+        viewModel.refreshUser();
     }
 }

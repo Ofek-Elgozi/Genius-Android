@@ -27,9 +27,9 @@ public class User implements Parcelable
     public String name;
     public String password;
     public String phone;
-    public String score="0";
-    public String group="0";
-    public String isTeacher="0";
+    public String score;
+    public String group;
+    public String isTeacher;
 
     public String avatarUrl;
 
@@ -99,7 +99,7 @@ public class User implements Parcelable
         this.lastUpdated = lastUpdated;
     }
 
-    public User(String name, String password, String email,String phone, String score, String group, String isTeacher, String avatarUrl)
+    public User(String name, String password, String email,String phone, String score, String group, String isTeacher)
     {
         this.name=name;
         this.password=password;
@@ -119,7 +119,6 @@ public class User implements Parcelable
         score="0";
         group="0";
         isTeacher="0";
-
     }
     public User(User u)
     {
@@ -159,7 +158,7 @@ public class User implements Parcelable
         String group=(String)json.get("group");
         String isTeacher=(String)json.get("isTeacher");
         String avatarUrl=(String)json.get("avatarUrl");
-        User user = new User(name,password,email,phone, score, group,isTeacher,avatarUrl);
+        User user = new User(name,password,email,phone, score, group,isTeacher);
         user.setAvatarUrl(avatarUrl);
         Timestamp ts = (Timestamp)json.get(LAST_UPDATED);
         user.setLastUpdated(new Long(ts.getSeconds()));

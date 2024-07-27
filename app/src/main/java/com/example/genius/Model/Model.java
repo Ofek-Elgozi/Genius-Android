@@ -101,8 +101,8 @@ public class Model
         void onComplete(String url);
     }
 
-    public void saveImage(Bitmap bitmap, String username, SaveImageListener listener)
+    public void saveImage(Bitmap bitmap, String email, SaveImageListener listener)
     {
-        modelFireBase.saveImage(bitmap,username, listener);
+        modelFireBase.saveImage(bitmap,email, listener);
     }
 }
