@@ -53,7 +53,7 @@ public class LoginFragment extends Fragment {
         hiddenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isPasswordVisible) {
+                if (!isPasswordVisible) {
                     // Hide the password
                     passwordEt.setTransformationMethod(new PasswordTransformationMethod());
                 } else {

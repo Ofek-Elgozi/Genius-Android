@@ -6,11 +6,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -32,6 +34,8 @@ public class RegisterFragment extends Fragment {
     EditText emailEt;
     EditText phoneEt;
     private FirebaseAuth mAuth;
+    private boolean isPasswordVisible = false;
+    ImageButton hiddenBtn;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,6 +49,23 @@ public class RegisterFragment extends Fragment {
         progressBar = view.findViewById(R.id.progressbar_register);
         progressBar.setVisibility(View.GONE);
         Button cancelBtn = view.findViewById(R.id.register_cancel_btn);
+
+        hiddenBtn = view.findViewById(R.id.register_hidden_btn);
+        hiddenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isPasswordVisible) {
+                    // Hide the password
+                    passwordEt.setTransformationMethod(new PasswordTransformationMethod());
+                } else {
+                    // Show the password
+                    passwordEt.setTransformationMethod(null);
+                }
+                // Toggle the flag
+                isPasswordVisible = !isPasswordVisible;
+            }
+        });
+
         cancelBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override

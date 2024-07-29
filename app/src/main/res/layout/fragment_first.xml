@@ -13,18 +13,28 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="651dp"
+        android:layout_marginTop="480dp"
         android:layout_marginEnd="31dp"
-        android:layout_marginBottom="30dp"
+        android:background="@drawable/rounded_background"
         android:backgroundTint="#006064"
         android:text="Let's Start!"
         android:textColorHint="#006064"
         android:textColorLink="#006064"
         android:textSize="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/rounded_background"
         app:strokeColor="#006064" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/waving_person"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
