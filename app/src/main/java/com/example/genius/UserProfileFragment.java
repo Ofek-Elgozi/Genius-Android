@@ -18,7 +18,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.genius.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -54,7 +53,7 @@ public class UserProfileFragment extends Fragment {
         avatarImg.setImageResource(R.drawable.avatar);
         avatarImg.setVisibility(View.INVISIBLE); // Initially hide the ImageView
 
-        TextView text_name = view.findViewById(R.id.profile_name_tv);
+        TextView text_name = view.findViewById(R.id.userlistrow_text_v1);
         TextView text_email = view.findViewById(R.id.profile_email_tv);
         TextView text_phone = view.findViewById(R.id.profile_phone_tv);
         TextView text_group = view.findViewById(R.id.profile_group_tv);

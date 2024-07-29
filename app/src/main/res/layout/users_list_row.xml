@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:backgroundTint="#000000">
+    android:layout_height="wrap_content">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/userlistrow_imagev"
         android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_height="0dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,101 +20,61 @@
         app:shapeAppearanceOverlay="@style/roundimageview"
         app:srcCompat="@drawable/avatar" />
 
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#E3E3E3"
-        android:backgroundTint="#000000"
-        android:text="Name:"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
-        app:layout_constraintTop_toTopOf="@+id/userlistrow_imagev" />
-
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:background="#000000"
-        android:backgroundTint="#000000"
-        android:text="Phone:"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
-        app:layout_constraintTop_toBottomOf="@+id/textView32" />
-
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:background="#E3E3E3"
-        android:backgroundTint="#000000"
-        android:text="Score:"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
     <TextView
         android:id="@+id/userlistrow_text_v1"
-        android:layout_width="0dp"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:background="#E3E3E3"
-        android:backgroundTint="#000000"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_background"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:inputType="text"
+        android:padding="10dp"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView32"
+        app:layout_constraintBottom_toTopOf="@+id/userlistrow_text_v2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView32"
-        app:layout_constraintTop_toTopOf="@+id/textView32"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/userlistrow_text_v2"
-        android:layout_width="0dp"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:background="#E3E3E3"
-        android:backgroundTint="#000000"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_background"
+        android:padding="10dp"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView33"
+        app:layout_constraintBottom_toTopOf="@+id/userlistrow_text_v3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView33"
-        app:layout_constraintTop_toTopOf="@+id/textView33"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
+        app:layout_constraintTop_toBottomOf="@+id/userlistrow_text_v1" />
+
 
     <TextView
         android:id="@+id/userlistrow_text_v3"
-        android:layout_width="0dp"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:background="#E3E3E3"
-        android:backgroundTint="#000000"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_background"
+        android:padding="10dp"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView35"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView35"
-        app:layout_constraintTop_toTopOf="@+id/textView35"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
+        app:layout_constraintTop_toBottomOf="@+id/userlistrow_text_v2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

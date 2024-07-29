@@ -14,7 +14,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="210dp"
-        android:backgroundTint="#000000"
+        android:background="@drawable/rounded_background"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
@@ -22,7 +22,6 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/rounded_background"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
