@@ -19,7 +19,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -27,8 +26,6 @@ import android.widget.TextView;
 
 import com.example.genius.Model.Model;
 import com.example.genius.Model.User;
-import com.google.android.material.color.utilities.Score;
-import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -131,14 +128,14 @@ public class ScoreBoardFragment extends Fragment {
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name;
-        TextView phone;
+        TextView group;
         TextView score;
         ImageView avatarImg;
 
         public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
             name = itemView.findViewById(R.id.userlistrow_text_v1);
-            phone = itemView.findViewById(R.id.userlistrow_text_v2);
+            group = itemView.findViewById(R.id.userlistrow_text_v2);
             score = itemView.findViewById(R.id.userlistrow_text_v3);
             avatarImg = itemView.findViewById(R.id.userlistrow_imagev);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -154,7 +151,7 @@ public class ScoreBoardFragment extends Fragment {
 
         public void bind(User user) {
             name.setText(user.getName());
-            phone.setText(user.getPhone());
+            group.setText(user.getGroup());
             score.setText(user.getScore());
             avatarImg.setImageResource(R.drawable.avatar);
             if (user.getAvatarUrl() != null) {

@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/rounded_bg_scoreboardrow"
     android:layout_height="wrap_content">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/userlistrow_imagev"
-        android:layout_width="160dp"
-        android:layout_height="0dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -22,61 +23,81 @@
 
 
     <TextView
-        android:id="@+id/userlistrow_text_v1"
-        android:layout_width="230dp"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_background"
-        android:ems="10"
-        android:fontFamily="sans-serif"
-        android:padding="10dp"
-        android:textAlignment="center"
+        android:text="Name"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:inputType="textNoSuggestions"
-        app:layout_constraintBottom_toTopOf="@+id/userlistrow_text_v2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userlistrow_text_v1"
         app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/userlistrow_imagev" />
 
     <TextView
-        android:id="@+id/userlistrow_text_v2"
-        android:layout_width="230dp"
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_background"
-        android:padding="10dp"
+        android:text="Score"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/userlistrow_text_v3"
+        app:layout_constraintStart_toStartOf="@+id/userlistrow_text_v3"
+        app:layout_constraintTop_toTopOf="@+id/userlistrow_imagev" />
+
+    <TextView
+        android:id="@+id/userlistrow_text_v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="219dp"
+        android:text="TextView"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:inputType="textNoSuggestions"
-        app:layout_constraintBottom_toTopOf="@+id/userlistrow_text_v3"
+        app:layout_constraintBottom_toBottomOf="@+id/userlistrow_imagev"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
-        app:layout_constraintTop_toBottomOf="@+id/userlistrow_text_v1" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/userlistrow_text_v3"
-        android:layout_width="230dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/rounded_background"
-        android:padding="10dp"
+        android:text="TextView"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:inputType="textNoSuggestions"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/userlistrow_imagev"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/userlistrow_imagev"
-        app:layout_constraintTop_toBottomOf="@+id/userlistrow_text_v2" />
+        app:layout_constraintStart_toEndOf="@+id/userlistrow_text_v2"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Group"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/userlistrow_text_v2"
+        app:layout_constraintStart_toStartOf="@+id/userlistrow_text_v2"
+        app:layout_constraintTop_toTopOf="@+id/userlistrow_imagev" />
+
+    <TextView
+        android:id="@+id/userlistrow_text_v2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="10dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/userlistrow_imagev"
+        app:layout_constraintEnd_toStartOf="@+id/userlistrow_text_v3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
