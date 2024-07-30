@@ -8,12 +8,15 @@
     tools:context=".EditUserProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/edit_profile_pic"
         android:layout_width="160dp"
         android:layout_height="140dp"
         android:layout_marginBottom="500dp"
         android:src="@drawable/avatar"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/roundimageview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
