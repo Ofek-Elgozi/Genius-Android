@@ -37,14 +37,49 @@ public class LoginFragment extends Fragment {
     ImageButton hiddenBtn;
     private FirebaseAuth mAuth;
     private boolean isPasswordVisible = false;
+    private String originalText1;
+    private String originalText2;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_login, container, false);
         mAuth = FirebaseAuth.getInstance();
+
         emailEt = view.findViewById(R.id.login_email_txt);
+        emailEt.setText("Email");
+        emailEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText1 = emailEt.getText().toString();
+                    emailEt.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (emailEt.getText().toString().isEmpty()) {
+                        emailEt.setText(originalText1); // Restore original text if no changes
+                    }
+                }
+            }
+        });
+
         passwordEt = view.findViewById(R.id.login_password_txt);
+        passwordEt.setText("Password");
+        passwordEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText2 = passwordEt.getText().toString();
+                    passwordEt.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (passwordEt.getText().toString().isEmpty()) {
+                        passwordEt.setText(originalText2); // Restore original text if no changes
+                    }
+                }
+            }
+        });
+
         login_progressBar = view.findViewById(R.id.login_progressBar);
         login_progressBar.setVisibility(View.GONE);
         sign_inBtn = view.findViewById(R.id.login_btn);
@@ -88,6 +123,13 @@ public class LoginFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        emailEt.setText("Email");
+        passwordEt.setText("Password");
     }
 
     private boolean validate()

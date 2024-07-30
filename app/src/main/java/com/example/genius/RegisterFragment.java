@@ -36,16 +36,82 @@ public class RegisterFragment extends Fragment {
     private FirebaseAuth mAuth;
     private boolean isPasswordVisible = false;
     ImageButton hiddenBtn;
+    private String originalText1;
+    private String originalText2;
+    private String originalText3;
+    private String originalText4;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_register, container, false);
         mAuth = FirebaseAuth.getInstance();
+
+
         emailEt = view.findViewById(R.id.register_email);
+        emailEt.setText("Email");
+        emailEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText1 = emailEt.getText().toString();
+                    emailEt.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (emailEt.getText().toString().isEmpty()) {
+                        emailEt.setText(originalText1); // Restore original text if no changes
+                    }
+                }
+            }
+        });
+
         passwordEt = view.findViewById(R.id.register_password);
+        passwordEt.setText("Password");
+        passwordEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText2 = passwordEt.getText().toString();
+                    passwordEt.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (passwordEt.getText().toString().isEmpty()) {
+                        passwordEt.setText(originalText2); // Restore original text if no changes
+                    }
+                }
+            }
+        });
+
         nameET = view.findViewById(R.id.register_name);
+        nameET.setText("Name");
+        nameET.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText3 = nameET.getText().toString();
+                    nameET.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (nameET.getText().toString().isEmpty()) {
+                        nameET.setText(originalText3); // Restore original text if no changes
+                    }
+                }
+            }
+        });
+
         phoneEt = view.findViewById(R.id.register_phone);
+        phoneEt.setText("Phone");
+        phoneEt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText4 = phoneEt.getText().toString();
+                    phoneEt.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (phoneEt.getText().toString().isEmpty()) {
+                        phoneEt.setText(originalText4); // Restore original text if no changes
+                    }
+                }
+            }
+        });
+
         progressBar = view.findViewById(R.id.progressbar_register);
         progressBar.setVisibility(View.GONE);
         Button cancelBtn = view.findViewById(R.id.register_cancel_btn);
@@ -118,6 +184,15 @@ public class RegisterFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        emailEt.setText("Email");
+        passwordEt.setText("Password");
+        nameET.setText("Name");
+        phoneEt.setText("Phone");
     }
 
     private boolean validate()

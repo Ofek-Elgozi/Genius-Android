@@ -46,6 +46,15 @@ public class EditUserProfileFragment extends Fragment {
     public String temp_group = " ";
     public String temp_url = "Test";
 
+    EditText text_name;
+    TextView text_email;
+    EditText text_phone;
+    EditText text_group;
+    private String originalText1;
+    private String originalText2;
+    private String originalText3;
+    private String originalText4;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_edit_user_profile, container, false);
@@ -60,17 +69,70 @@ public class EditUserProfileFragment extends Fragment {
             Picasso.get().load(user.getAvatarUrl()).placeholder(R.drawable.avatar).into(avatarImg);
         }
 
-        EditText text_name = view.findViewById(R.id.edit_profile_name_et);
+        text_name = view.findViewById(R.id.edit_profile_name_et);
         text_name.setText(user.getName());
+        text_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText1 = text_name.getText().toString();
+                    text_name.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (text_name.getText().toString().isEmpty()) {
+                        text_name.setText(originalText1); // Restore original text if no changes
+                    }
+                }
+            }
+        });
 
-        TextView text_email = view.findViewById(R.id.edit_profile_email_et);
+        text_email = view.findViewById(R.id.edit_profile_email_et);
         text_email.setText(user.getEmail());
+        text_email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText2 = text_email.getText().toString();
+                    text_email.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (text_email.getText().toString().isEmpty()) {
+                        text_email.setText(originalText2); // Restore original text if no changes
+                    }
+                }
+            }
+        });
 
-        EditText text_phone = view.findViewById(R.id.edit_profile_phone_et);
+        text_phone = view.findViewById(R.id.edit_profile_phone_et);
         text_phone.setText(user.getPhone());
+        text_phone.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText3 = text_phone.getText().toString();
+                    text_phone.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (text_phone.getText().toString().isEmpty()) {
+                        text_phone.setText(originalText3); // Restore original text if no changes
+                    }
+                }
+            }
+        });
 
-        EditText text_group = view.findViewById(R.id.edit_profile_group_et);
+        text_group = view.findViewById(R.id.edit_profile_group_et);
         text_group.setText(user.getGroup());
+
+        text_group.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    originalText4 = text_group.getText().toString();
+                    text_group.setText(""); // Clear the text when EditText gains focus
+                } else {
+                    if (text_group.getText().toString().isEmpty()) {
+                        text_group.setText(originalText4); // Restore original text if no changes
+                    }
+                }
+            }
+        });
 
         ImageButton editImageBtn = view.findViewById(R.id.edit_picture_btn);
 
@@ -113,6 +175,15 @@ public class EditUserProfileFragment extends Fragment {
 
         setHasOptionsMenu(true);
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        text_name.setText(user.getName());
+        text_email.setText(user.getEmail());
+        text_phone.setText(user.getPhone());
+        text_group.setText(user.getGroup());
     }
 
     private void saveUser(String avatarUrl) {
