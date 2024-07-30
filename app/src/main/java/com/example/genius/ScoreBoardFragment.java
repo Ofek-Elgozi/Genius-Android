@@ -19,6 +19,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -42,6 +44,11 @@ public class ScoreBoardFragment extends Fragment {
     ProgressBar ScoreBoard_progressBar;
     SwipeRefreshLayout ScoreBoard_SwipeRefresh;
 
+    ImageButton my_group_btn;
+    ImageButton all_group_btn;
+
+    private boolean showAllUsers = false; // Flag to indicate whether to show all users or only group users
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -53,6 +60,8 @@ public class ScoreBoardFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_score_board, container, false);
         u = ScoreBoardFragmentArgs.fromBundle(getArguments()).getUser();
+        my_group_btn = view.findViewById(R.id.mygroup_btn);
+        all_group_btn = view.findViewById(R.id.allgroup_btn);
         ScoreBoard_progressBar = view.findViewById(R.id.scoreboard_progressBar);
         ScoreBoard_progressBar.setVisibility(View.VISIBLE);
         RecyclerView list = view.findViewById(R.id.scoreboardfragment_listv);
@@ -73,6 +82,26 @@ public class ScoreBoardFragment extends Fragment {
             }
         });
 
+        my_group_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAllUsers = false; // Show only group users
+                my_group_btn.setSelected(true);
+                all_group_btn.setSelected(false);
+                updateUsers(viewModel.getData().getValue());
+            }
+        });
+
+        all_group_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAllUsers = true; // Show all users
+                my_group_btn.setSelected(false);
+                all_group_btn.setSelected(true);
+                updateUsers(viewModel.getData().getValue()); // Update the list with the appropriate filter
+            }
+        });
+
         if (viewModel.getData().getValue() == null) {
             Model.instance.reloadUserList();
             ScoreBoard_SwipeRefresh.setRefreshing(false);
@@ -80,18 +109,28 @@ public class ScoreBoardFragment extends Fragment {
         viewModel.getData().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> users) {
-                List<User> filteredUsers = users.stream()
-                        .filter(user -> user.getGroup().equals(u.getGroup()))
-                        .collect(Collectors.toList());
-
-                adapter.setUsers(filteredUsers); // Update the adapter with filtered users
-                adapter.notifyDataSetChanged();
+                updateUsers(users); // Update the list with the appropriate filter
                 ScoreBoard_SwipeRefresh.setRefreshing(false);
                 ScoreBoard_progressBar.setVisibility(View.GONE);
             }
         });
         setHasOptionsMenu(true);
         return view;
+    }
+
+    private void updateUsers(List<User> users) {
+        if (users != null) {
+            List<User> filteredUsers;
+            if (showAllUsers) {
+                filteredUsers = users; // Show all users
+            } else {
+                filteredUsers = users.stream()
+                        .filter(user -> user.getGroup().equals(u.getGroup()))
+                        .collect(Collectors.toList()); // Show only users from the same group
+            }
+            adapter.setUsers(filteredUsers); // Update the adapter with filtered users
+            adapter.notifyDataSetChanged();
+        }
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {

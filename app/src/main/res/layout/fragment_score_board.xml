@@ -7,6 +7,30 @@
     android:background="@drawable/onezerobg"
     tools:context=".ScoreBoardFragment">
 
+    <ImageButton
+        android:id="@+id/mygroup_btn"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="-10dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mygroup_img"
+        app:layout_constraintBottom_toTopOf="@+id/scoreboard_SwipeRefresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/allgroup_btn"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="-5dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/allgroups_img"
+        app:layout_constraintBottom_toTopOf="@+id/scoreboard_SwipeRefresh"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ProgressBar
         android:id="@+id/scoreboard_progressBar"
         style="?android:attr/progressBarStyle"
@@ -21,11 +45,11 @@
         android:id="@+id/scoreboard_SwipeRefresh"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/mygroup_btn">
 
 
         <androidx.recyclerview.widget.RecyclerView
