@@ -9,26 +9,25 @@
 
     <ImageButton
         android:id="@+id/mygroup_btn"
-        android:layout_width="220dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="-10dp"
-        android:background="#FF515151"
-        android:scaleType="fitCenter"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#00515151"
+        android:scaleType="fitXY"
         android:src="@drawable/mygroup_img"
-        app:layout_constraintBottom_toTopOf="@+id/scoreboard_SwipeRefresh"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/allgroup_btn"
-        android:layout_width="220dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="-5dp"
-        android:background="#FF515151"
-        android:scaleType="fitCenter"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
         android:src="@drawable/allgroups_img"
         app:layout_constraintBottom_toTopOf="@+id/scoreboard_SwipeRefresh"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mygroup_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
