@@ -86,8 +86,6 @@ public class ScoreBoardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 showAllUsers = false; // Show only group users
-                my_group_btn.setSelected(true);
-                all_group_btn.setSelected(false);
                 updateUsers(viewModel.getData().getValue());
             }
         });
@@ -96,8 +94,6 @@ public class ScoreBoardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 showAllUsers = true; // Show all users
-                my_group_btn.setSelected(false);
-                all_group_btn.setSelected(true);
                 updateUsers(viewModel.getData().getValue()); // Update the list with the appropriate filter
             }
         });
