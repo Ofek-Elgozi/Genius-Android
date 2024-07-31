@@ -34,6 +34,8 @@ public class LoginFragment extends Fragment {
     ProgressBar login_progressBar;
     Button registerBtn;
     Button sign_inBtn;
+
+    Button forgetpassword_btn;
     ImageButton hiddenBtn;
     private FirebaseAuth mAuth;
     private boolean isPasswordVisible = false;
@@ -82,6 +84,26 @@ public class LoginFragment extends Fragment {
 
         login_progressBar = view.findViewById(R.id.login_progressBar);
         login_progressBar.setVisibility(View.GONE);
+
+        forgetpassword_btn = view.findViewById(R.id.forgetpass_btn);
+        forgetpassword_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                String emailAddress = "ofeke209@gmail.com";
+
+                auth.sendPasswordResetEmail(emailAddress)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(getActivity(), "Email sent.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+            }
+        });
+
         sign_inBtn = view.findViewById(R.id.login_btn);
         registerBtn = view.findViewById(R.id.not_reg_btn);
         hiddenBtn = view.findViewById(R.id.hidden_btn);

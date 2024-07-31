@@ -160,7 +160,6 @@ public class RegisterFragment extends Fragment {
                                     progressBar.setVisibility(View.VISIBLE);
                                     User user = new User();
                                     user.setName(nameET.getText().toString());
-                                    user.setPassword(passwordEt.getText().toString());
                                     user.setEmail(emailEt.getText().toString());
                                     user.setPhone(phoneEt.getText().toString());
                                     nameET.setEnabled(false);

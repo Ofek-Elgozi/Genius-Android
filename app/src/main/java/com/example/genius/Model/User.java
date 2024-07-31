@@ -25,7 +25,6 @@ public class User implements Parcelable
     @NonNull
     public String email;
     public String name;
-    public String password;
     public String phone;
     public String score;
     public String group;
@@ -59,10 +58,6 @@ public class User implements Parcelable
     Long lastUpdated= new Long(0);
 
     @NonNull
-    public String getPassword() {
-        return password;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -79,9 +74,6 @@ public class User implements Parcelable
         return name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public void setEmail(String email) {
         this.email = email;
@@ -99,10 +91,9 @@ public class User implements Parcelable
         this.lastUpdated = lastUpdated;
     }
 
-    public User(String name, String password, String email,String phone, String score, String group, String isTeacher)
+    public User(String name, String email,String phone, String score, String group, String isTeacher)
     {
         this.name=name;
-        this.password=password;
         this.email=email;
         this.phone=phone;
         this.score=score;
@@ -113,7 +104,6 @@ public class User implements Parcelable
     public User()
     {
         name=" ";
-        password=" ";
         email=" ";
         phone=" ";
         score="0";
@@ -123,7 +113,6 @@ public class User implements Parcelable
     public User(User u)
     {
         this.name=u.name;
-        this.password=u.password;
         this.email=u.email;
         this.phone=u.phone;
         this.score=u.score;
@@ -135,7 +124,6 @@ public class User implements Parcelable
     {
         Map<String, Object> json = new HashMap<>();
         json.put("name", getName());
-        json.put("password", getPassword());
         json.put("email", getEmail());
         json.put("phone", getPhone());
         json.put("score", getScore());
@@ -151,14 +139,13 @@ public class User implements Parcelable
         String email=(String)json.get("email");
         if(email==null)
             return null;
-        String password=(String)json.get("password");
         String name=(String)json.get("name");
         String phone=(String)json.get("phone");
         String score=(String)json.get("score");
         String group=(String)json.get("group");
         String isTeacher=(String)json.get("isTeacher");
         String avatarUrl=(String)json.get("avatarUrl");
-        User user = new User(name,password,email,phone, score, group,isTeacher);
+        User user = new User(name,email,phone, score, group,isTeacher);
         user.setAvatarUrl(avatarUrl);
         Timestamp ts = (Timestamp)json.get(LAST_UPDATED);
         user.setLastUpdated(new Long(ts.getSeconds()));
@@ -189,7 +176,6 @@ public class User implements Parcelable
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(email);
         dest.writeString(name);
-        dest.writeString(password);
         dest.writeString(phone);
         dest.writeString(score);
         dest.writeString(group);
@@ -206,7 +192,6 @@ public class User implements Parcelable
     protected User(Parcel in) {
         email = in.readString();
         name = in.readString();
-        password = in.readString();
         phone = in.readString();
         score = in.readString();
         group = in.readString();

@@ -2,7 +2,6 @@ package com.example.genius;
 
 import static android.app.Activity.RESULT_CANCELED;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -34,7 +33,6 @@ public class EditUserProfileFragment extends Fragment {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     static final int REQUEST_IMAGE_PICK = 2; // Changed from 1 to 2 to avoid conflict
-    static final int RESULT_SUCCESS = 0;
     User user;
     View view;
     ImageView avatarImg;
@@ -71,48 +69,39 @@ public class EditUserProfileFragment extends Fragment {
 
         text_name = view.findViewById(R.id.edit_profile_name_et);
         text_name.setText(user.getName());
-        text_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    originalText1 = text_name.getText().toString();
-                    text_name.setText(""); // Clear the text when EditText gains focus
-                } else {
-                    if (text_name.getText().toString().isEmpty()) {
-                        text_name.setText(originalText1); // Restore original text if no changes
-                    }
+        text_name.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                originalText1 = text_name.getText().toString();
+                text_name.setText(""); // Clear the text when EditText gains focus
+            } else {
+                if (text_name.getText().toString().isEmpty()) {
+                    text_name.setText(originalText1); // Restore original text if no changes
                 }
             }
         });
 
         text_email = view.findViewById(R.id.edit_profile_email_et);
         text_email.setText(user.getEmail());
-        text_email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    originalText2 = text_email.getText().toString();
-                    text_email.setText(""); // Clear the text when EditText gains focus
-                } else {
-                    if (text_email.getText().toString().isEmpty()) {
-                        text_email.setText(originalText2); // Restore original text if no changes
-                    }
+        text_email.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                originalText2 = text_email.getText().toString();
+                text_email.setText(""); // Clear the text when EditText gains focus
+            } else {
+                if (text_email.getText().toString().isEmpty()) {
+                    text_email.setText(originalText2); // Restore original text if no changes
                 }
             }
         });
 
         text_phone = view.findViewById(R.id.edit_profile_phone_et);
         text_phone.setText(user.getPhone());
-        text_phone.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    originalText3 = text_phone.getText().toString();
-                    text_phone.setText(""); // Clear the text when EditText gains focus
-                } else {
-                    if (text_phone.getText().toString().isEmpty()) {
-                        text_phone.setText(originalText3); // Restore original text if no changes
-                    }
+        text_phone.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                originalText3 = text_phone.getText().toString();
+                text_phone.setText(""); // Clear the text when EditText gains focus
+            } else {
+                if (text_phone.getText().toString().isEmpty()) {
+                    text_phone.setText(originalText3); // Restore original text if no changes
                 }
             }
         });
@@ -120,16 +109,13 @@ public class EditUserProfileFragment extends Fragment {
         text_group = view.findViewById(R.id.edit_profile_group_et);
         text_group.setText(user.getGroup());
 
-        text_group.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    originalText4 = text_group.getText().toString();
-                    text_group.setText(""); // Clear the text when EditText gains focus
-                } else {
-                    if (text_group.getText().toString().isEmpty()) {
-                        text_group.setText(originalText4); // Restore original text if no changes
-                    }
+        text_group.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                originalText4 = text_group.getText().toString();
+                text_group.setText(""); // Clear the text when EditText gains focus
+            } else {
+                if (text_group.getText().toString().isEmpty()) {
+                    text_group.setText(originalText4); // Restore original text if no changes
                 }
             }
         });
@@ -187,7 +173,7 @@ public class EditUserProfileFragment extends Fragment {
     }
 
     private void saveUser(String avatarUrl) {
-        User updatedUser = new User(temp_name, user.getPassword(), user.getEmail(), temp_phone, user.getScore(), temp_group, user.getIsTeacher());
+        User updatedUser = new User(temp_name, user.getEmail(), temp_phone, user.getScore(), temp_group, user.getIsTeacher());
         updatedUser.setAvatarUrl(avatarUrl);
         Model.instance.addUser(updatedUser, () -> {
             Toast.makeText(getActivity(), "User Details successfully Edited", Toast.LENGTH_SHORT).show();
@@ -202,18 +188,15 @@ public class EditUserProfileFragment extends Fragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Choose your profile picture");
 
-        builder.setItems(options, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int item) {
-                if (options[item].equals("Take Photo")) {
-                    Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(takePicture, REQUEST_IMAGE_CAPTURE);
-                } else if (options[item].equals("Choose from Gallery")) {
-                    Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    startActivityForResult(pickPhoto, REQUEST_IMAGE_PICK);
-                } else if (options[item].equals("Cancel")) {
-                    dialog.dismiss();
-                }
+        builder.setItems(options, (dialog, item) -> {
+            if (options[item].equals("Take Photo")) {
+                Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(takePicture, REQUEST_IMAGE_CAPTURE);
+            } else if (options[item].equals("Choose from Gallery")) {
+                Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(pickPhoto, REQUEST_IMAGE_PICK);
+            } else if (options[item].equals("Cancel")) {
+                dialog.dismiss();
             }
         });
         builder.show();
