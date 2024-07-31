@@ -61,27 +61,27 @@
         android:name="com.example.genius.LessonsFragment"
         android:label="fragment_lessons"
         tools:layout="@layout/fragment_lessons" >
-        <action
-            android:id="@+id/action_lessonsFragment_to_lessionDetailsFragment"
-            app:destination="@id/lessionDetailsFragment" />
         <argument
             android:name="user"
             app:argType="com.example.genius.Model.User" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_lessonFourFragment"
+            app:destination="@id/lessonFourFragment" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_lessonThreeFragment"
+            app:destination="@id/lessonThreeFragment" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_lessonTwoFragment"
+            app:destination="@id/lessonTwoFragment" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_lessonOneFragment"
+            app:destination="@id/lessonOneFragment" />
     </fragment>
     <fragment
         android:id="@+id/scoreBoardFragment"
         android:name="com.example.genius.ScoreBoardFragment"
         android:label="fragment_score_board"
         tools:layout="@layout/fragment_score_board" >
-        <argument
-            android:name="user"
-            app:argType="com.example.genius.Model.User" />
-    </fragment>
-    <fragment
-        android:id="@+id/lessionDetailsFragment"
-        android:name="com.example.genius.LessionDetailsFragment"
-        android:label="fragment_lession_details"
-        tools:layout="@layout/fragment_lession_details" >
         <argument
             android:name="user"
             app:argType="com.example.genius.Model.User" />
@@ -112,5 +112,41 @@
         <action
             android:id="@+id/action_editUserProfileFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonOneFragment"
+        android:name="com.example.genius.LessonOneFragment"
+        android:label="fragment_lession_one"
+        tools:layout="@layout/fragment_lession_one" >
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonTwoFragment"
+        android:name="com.example.genius.LessonTwoFragment"
+        android:label="fragment_lesson_two"
+        tools:layout="@layout/fragment_lesson_two" >
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonThreeFragment"
+        android:name="com.example.genius.LessonThreeFragment"
+        android:label="fragment_lesson_three"
+        tools:layout="@layout/fragment_lesson_three" >
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonFourFragment"
+        android:name="com.example.genius.LessonFourFragment"
+        android:label="fragment_lesson_four"
+        tools:layout="@layout/fragment_lesson_four" >
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
     </fragment>
 </navigation>

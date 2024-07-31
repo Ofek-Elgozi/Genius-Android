@@ -24,6 +24,7 @@ public class MainPageFragment extends Fragment {
     String temp_email;
     View view;
     ImageButton scoreboard_btn;
+    ImageButton my_lessons_btn;
     ProgressBar MainPage_progressBar;
 
     @Override
@@ -47,6 +48,15 @@ public class MainPageFragment extends Fragment {
             if(updateduser != null)
             {
                 MainPageFragmentDirections.ActionMainPageFragmentToScoreBoardFragment action = MainPageFragmentDirections.actionMainPageFragmentToScoreBoardFragment(updateduser);
+                Navigation.findNavController(v).navigate(action);
+            }
+        });
+        my_lessons_btn = view.findViewById(R.id.mylessons_btn);
+        my_lessons_btn.setOnClickListener(v -> {
+            MainPage_progressBar.setVisibility(View.VISIBLE);
+            if(updateduser != null)
+            {
+                MainPageFragmentDirections.ActionMainPageFragmentToLessonsFragment action = MainPageFragmentDirections.actionMainPageFragmentToLessonsFragment(updateduser);
                 Navigation.findNavController(v).navigate(action);
             }
         });

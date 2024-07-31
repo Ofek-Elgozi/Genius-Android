@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class LessionDetailsFragment extends Fragment {
+public class LessonTwoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lession_details, container, false);
+        return inflater.inflate(R.layout.fragment_lesson_two, container, false);
     }
 }
