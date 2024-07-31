@@ -1,11 +1,14 @@
 package com.example.genius;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -89,18 +92,31 @@ public class LoginFragment extends Fragment {
         forgetpassword_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth auth = FirebaseAuth.getInstance();
-                String emailAddress = "ofeke209@gmail.com";
+                // Create an AlertDialog to prompt the user for their email address
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Enter your email address");
 
-                auth.sendPasswordResetEmail(emailAddress)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getActivity(), "Email sent.", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+                // Set up the input
+                final EditText input = new EditText(getActivity());
+                input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+                builder.setView(input);
+
+                // Set up the buttons
+                builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String emailAddress = input.getText().toString();
+                        sendPasswordResetEmail(emailAddress);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
             }
         });
 
@@ -145,6 +161,22 @@ public class LoginFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private void sendPasswordResetEmail(String emailAddress) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        auth.sendPasswordResetEmail(emailAddress)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getActivity(), "Email sent.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getActivity(), "Failed to send email.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
     @Override
