@@ -449,7 +449,7 @@
         <ImageView
             android:id="@+id/imageView16"
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson1_1_a"
@@ -460,7 +460,7 @@
         <ImageView
             android:id="@+id/imageView17"
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson1_1_b"
@@ -471,7 +471,7 @@
         <ImageView
             android:id="@+id/imageView18"
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson1_1_c"
@@ -482,7 +482,7 @@
         <ImageView
             android:id="@+id/imageView19"
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson1_1_d"

@@ -98,18 +98,17 @@ public class LessonOneFragment extends Fragment {
                 if (radioButton.isChecked()) {
                     if(currentScore < 10) {
                         user.setScore(String.valueOf(currentScore + 10));
+                        Model.instance.addUser(user, new Model.addUserListener() {
+                            @Override
+                            public void onComplete() {
+                                Log.d(TAG, "User updated successfully");
+                            }
+                        });
                     }
                     lesson1_pb.setVisibility(View.VISIBLE);
-                    Model.instance.addUser(user, new Model.addUserListener() {
-                        @Override
-                        public void onComplete() {
-                            // Handle the completion of the user update
-                            Navigation.findNavController(view).popBackStack();
-                            Log.d(TAG, "User updated successfully");
-                            Log.d(TAG, "Correct! Score: " + user.getScore());
-                            Toast.makeText(getActivity(), "Correct! Score: " + user.getScore(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    Navigation.findNavController(view).popBackStack();
+                    Log.d(TAG, "Correct! Score: " + user.getScore());
+                    Toast.makeText(getActivity(), "Correct! Score: " + user.getScore(), Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Log.d(TAG, "Incorrect! Score still: " + user.getScore());

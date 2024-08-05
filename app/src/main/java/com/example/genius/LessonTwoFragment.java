@@ -156,18 +156,18 @@ public class LessonTwoFragment extends Fragment {
                 if (radioButton5.isChecked() && radioButton8.isChecked() && radioButton14.isChecked() && radioButton17.isChecked()) {
                     if(currentScore < 20 && currentScore >=10) {
                         user.setScore(String.valueOf(currentScore + 10));
+                        Model.instance.addUser(user, new Model.addUserListener() {
+                            @Override
+                            public void onComplete() {
+                                // Handle the completion of the user update
+                                Log.d(TAG, "User updated successfully");
+                            }
+                        });
                     }
                     lesson2_pb.setVisibility(View.VISIBLE);
-                    Model.instance.addUser(user, new Model.addUserListener() {
-                        @Override
-                        public void onComplete() {
-                            // Handle the completion of the user update
-                            Navigation.findNavController(view).popBackStack();
-                            Log.d(TAG, "User updated successfully");
-                            Log.d(TAG, "All answers are correct! Score: " + user.getScore());
-                            Toast.makeText(getActivity(), "All answers are correct! Score: " + user.getScore(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    Navigation.findNavController(view).popBackStack();
+                    Log.d(TAG, "All answers are correct! Score: " + user.getScore());
+                    Toast.makeText(getActivity(), "All answers are correct! Score: " + user.getScore(), Toast.LENGTH_SHORT).show();
                 }
                 else if(radioButton5.isChecked() == false)
                 {
