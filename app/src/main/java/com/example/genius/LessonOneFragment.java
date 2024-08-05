@@ -34,7 +34,8 @@ public class LessonOneFragment extends Fragment {
     private static final String TAG = "LessonOneFragment";
     View view;
     User user;
-    RadioButton radioButton, radioButton1, radioButton2, radioButton3;
+    RadioButton radioButton, radioButton1, radioButton2, radioButton3
+            , radioButton20, radioButton21, radioButton22, radioButton23;
     Button doneBtn;
     ProgressBar lesson1_pb;
     int currentScore;
@@ -49,6 +50,10 @@ public class LessonOneFragment extends Fragment {
         radioButton1 = view.findViewById(R.id.radioButton1);
         radioButton2 = view.findViewById(R.id.radioButton2);
         radioButton3 = view.findViewById(R.id.radioButton3);
+        radioButton20 = view.findViewById(R.id.radioButton20);
+        radioButton21 = view.findViewById(R.id.radioButton21);
+        radioButton22 = view.findViewById(R.id.radioButton22);
+        radioButton23 = view.findViewById(R.id.radioButton23);
         doneBtn = view.findViewById(R.id.done_btn);
         lesson1_pb = view.findViewById(R.id.lesson1_progressBar);
         lesson1_pb.setVisibility(View.GONE);
@@ -77,7 +82,7 @@ public class LessonOneFragment extends Fragment {
         textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setHighlightColor(Color.TRANSPARENT); // Remove highlight effect when clicked
 
-        // Set up RadioButton logic
+        // Question 1
         RadioButton[] radioButtons = {radioButton, radioButton1, radioButton2, radioButton3};
         for (RadioButton rb : radioButtons) {
             rb.setOnClickListener(new View.OnClickListener() {
@@ -91,11 +96,25 @@ public class LessonOneFragment extends Fragment {
                 }
             });
         }
+        // Question 2
+        RadioButton[] radioButtons2 = {radioButton20, radioButton21, radioButton22, radioButton23};
+        for (RadioButton rb : radioButtons2) {
+            rb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    for (RadioButton otherRb : radioButtons2) {
+                        if (otherRb != rb) {
+                            otherRb.setChecked(false);
+                        }
+                    }
+                }
+            });
+        }
 
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (radioButton.isChecked()) {
+                if (radioButton.isChecked() && radioButton23.isChecked()) {
                     if(currentScore < 10) {
                         user.setScore(String.valueOf(currentScore + 10));
                         Model.instance.addUser(user, new Model.addUserListener() {
@@ -110,10 +129,17 @@ public class LessonOneFragment extends Fragment {
                     Log.d(TAG, "Correct! Score: " + user.getScore());
                     Toast.makeText(getActivity(), "Correct! Score: " + user.getScore(), Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    Log.d(TAG, "Incorrect! Score still: " + user.getScore());
-                    Toast.makeText(getActivity(), "Incorrect! Score still: " + user.getScore(), Toast.LENGTH_SHORT).show();
-                }}
+                else if(radioButton.isChecked() == false)
+                {
+                    Log.d(TAG, "Question 1 Incorrect! Score still: " + user.getScore());
+                    Toast.makeText(getActivity(), "Question 1 Incorrect! Score still: " + user.getScore(), Toast.LENGTH_SHORT).show();
+                }
+                else if(radioButton23.isChecked() == false)
+                {
+                    Log.d(TAG, "Question 2 Incorrect! Score still: " + user.getScore());
+                    Toast.makeText(getActivity(), "Question 2 Incorrect! Score still: " + user.getScore(), Toast.LENGTH_SHORT).show();
+                }
+            }
         });
 
 
