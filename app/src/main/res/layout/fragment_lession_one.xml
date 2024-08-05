@@ -13,17 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <CheckBox
-            android:id="@+id/checkBox1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:text="B)"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/checkBox"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
-
         <TextView
             android:id="@+id/lesson_title"
             android:layout_width="0dp"
@@ -45,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="21dp"
-            android:text="Data Types: We use different typs of data types"
+            android:text="Data Types: We use different types of data types"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -130,18 +119,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="• A unique name for him."
+            android:text="• A unique name for it."
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/textView25"
-            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+            app:layout_constraintTop_toBottomOf="@+id/textView25"/>
 
         <TextView
             android:id="@+id/textView27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="• Type (one of the information types that will define both its size and the its type."
+            android:text="• Type (one of the information types that will define both its size and its type."
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/textView26"
@@ -260,7 +249,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="• A variable name will start with a lowercase letter. If his name consists of several words."
+            android:text="• A variable name will start with a lowercase letter. If its name consists of several words."
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/textView34"
@@ -416,122 +405,130 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
+
+        <RadioButton
+            android:id="@+id/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="A)"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/textView45"
-            app:layout_constraintTop_toBottomOf="@+id/textView45" />
+            app:layout_constraintTop_toTopOf="@+id/imageView16" />
 
-        <CheckBox
-            android:id="@+id/checkBox2"
+        <RadioButton
+            android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
+            android:text="B)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton"
+            app:layout_constraintTop_toTopOf="@+id/imageView17" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="C)"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/checkBox1"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+            app:layout_constraintStart_toStartOf="@+id/radioButton1"
+            app:layout_constraintTop_toTopOf="@+id/imageView18" />
 
-        <CheckBox
-            android:id="@+id/checkBox3"
+        <RadioButton
+            android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
             android:text="D)"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/checkBox2"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+            app:layout_constraintStart_toStartOf="@+id/radioButton2"
+            app:layout_constraintTop_toTopOf="@+id/imageView19" />
 
         <ImageView
             android:id="@+id/imageView16"
-            android:layout_width="303dp"
-            android:layout_height="152dp"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson1_1_a"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/checkBox"
+            app:layout_constraintStart_toEndOf="@+id/radioButton"
             app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
         <ImageView
             android:id="@+id/imageView17"
-            android:layout_width="307dp"
-            android:layout_height="135dp"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson1_1_b"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/checkBox1"
+            app:layout_constraintStart_toEndOf="@+id/radioButton1"
             app:layout_constraintTop_toBottomOf="@+id/imageView16" />
 
         <ImageView
             android:id="@+id/imageView18"
-            android:layout_width="304dp"
-            android:layout_height="143dp"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson1_1_c"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/checkBox2"
+            app:layout_constraintStart_toEndOf="@+id/radioButton2"
             app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
         <ImageView
             android:id="@+id/imageView19"
-            android:layout_width="310dp"
-            android:layout_height="140dp"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson1_1_d"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/checkBox3"
+            app:layout_constraintStart_toEndOf="@+id/radioButton3"
             app:layout_constraintTop_toBottomOf="@+id/imageView18" />
 
-        <TextView
-            android:id="@+id/textView46"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:autoLink="web"
-            android:linksClickable="true"
-            android:text="Click me and try running this code alone to see how it works!"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:text="Click me and try running this code alone to see how it works!"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/done_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="29dp"
-            android:layout_marginBottom="28dp"
-            android:text="Done"
-            android:background="@drawable/rounded_bg_scoreboardrow"
-            app:layout_constraintBottom_toTopOf="@+id/textView46"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView19" />
+    <Button
+        android:id="@+id/done_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="28dp"
+        android:text="Done"
+        android:background="@drawable/rounded_bg_scoreboardrow"
+        app:layout_constraintBottom_toTopOf="@+id/textView46"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
 
-        <ProgressBar
-            android:id="@+id/lesson1_progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView45" />
+    <ProgressBar
+        android:id="@+id/lesson1_progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView45" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
