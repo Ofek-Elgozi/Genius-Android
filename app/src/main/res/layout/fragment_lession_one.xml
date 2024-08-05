@@ -497,7 +497,7 @@
         android:layout_marginBottom="15dp"
         android:autoLink="web"
         android:linksClickable="true"
-        android:text="Click me and try running this code alone to see how it works!"
+        android:text="Click here and try running those questions alone to see how it works!"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="14sp"

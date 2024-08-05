@@ -70,7 +70,7 @@ public class LessonTwoFragment extends Fragment {
         lesson2_pb.setVisibility(View.GONE);
 
         TextView textView = view.findViewById(R.id.link_click_msg);
-        String text = "Click me and try running this code alone to see how it works!";
+        String text = "Click here and try running those questions alone to see how it works!";
         SpannableString spannableString = new SpannableString(text);
 
         ClickableSpan clickableSpan = new ClickableSpan() {
