@@ -100,21 +100,21 @@ public class LessonOneFragment extends Fragment {
                         user.setScore(String.valueOf(currentScore + 10));
                     }
                     lesson1_pb.setVisibility(View.VISIBLE);
-                    Log.d(TAG, "Correct! Score: " + user.getScore());
-                    Toast.makeText(getActivity(), "Correct! Score: " + user.getScore(), Toast.LENGTH_SHORT).show();
-                } else {
+                    Model.instance.addUser(user, new Model.addUserListener() {
+                        @Override
+                        public void onComplete() {
+                            // Handle the completion of the user update
+                            Navigation.findNavController(view).popBackStack();
+                            Log.d(TAG, "User updated successfully");
+                            Log.d(TAG, "Correct! Score: " + user.getScore());
+                            Toast.makeText(getActivity(), "Correct! Score: " + user.getScore(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                else {
                     Log.d(TAG, "Incorrect! Score still: " + user.getScore());
                     Toast.makeText(getActivity(), "Incorrect! Score still: " + user.getScore(), Toast.LENGTH_SHORT).show();
-                }
-                // Here you should update the user object in your database
-                Model.instance.addUser(user, new Model.addUserListener() {
-                    @Override
-                    public void onComplete() {
-                        // Handle the completion of the user update
-                        Log.d(TAG, "User updated successfully");
-                    }
-                });
-            }
+                }}
         });
 
 
