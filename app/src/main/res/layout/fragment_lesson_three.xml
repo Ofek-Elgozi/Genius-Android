@@ -138,7 +138,7 @@
         <ImageView
             android:id="@+id/imageView24"
             android:layout_width="375dp"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson3_ifexample"
@@ -194,7 +194,7 @@
         <ImageView
             android:id="@+id/imageView28"
             android:layout_width="375dp"
-            android:layout_height="250dp"
+            android:layout_height="275dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson3_ifelse_example"
@@ -364,7 +364,7 @@
         <ImageView
             android:id="@+id/imageView29"
             android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:layout_height="75dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson3_operatorsexample"
@@ -441,7 +441,7 @@
         <ImageView
             android:id="@+id/imageView31"
             android:layout_width="350dp"
-            android:layout_height="250dp"
+            android:layout_height="275dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson3_nestedconditionsexample"
