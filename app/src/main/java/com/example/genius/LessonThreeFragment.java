@@ -13,14 +13,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.genius.Model.User;
+
 
 public class LessonThreeFragment extends Fragment {
     View view;
+    User user;
+    private static final String TAG = "LessonTwoFragment";
+    int currentScore;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_lesson_three, container, false);
+        user = LessonThreeFragmentArgs.fromBundle(getArguments()).getUser();
+        currentScore = Integer.parseInt(user.getScore());
+
+
+
         setHasOptionsMenu(true);
         return view;
     }

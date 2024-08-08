@@ -12,37 +12,438 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Add your content here -->
-
-        <!-- Example TextView -->
         <TextView
             android:id="@+id/lesson_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Lesson Title"
-            android:textSize="24sp"
-            android:textColor="#FFFFFF"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="16dp"/>
-
-        <!-- Example Content -->
-        <TextView
-            android:id="@+id/lesson_content"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:layout_marginBottom="691dp"
-            android:text="This is the content of the lesson. Add as much text as you need here."
+            android:background="@drawable/rounded_bg_scoreboardrow"
+            android:text="Flow Control - if-else"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lesson_title" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Add more content as needed -->
+        <TextView
+            android:id="@+id/textView90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="What is flow control?"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/lesson_title"
+            app:layout_constraintTop_toBottomOf="@+id/lesson_title" />
+
+        <TextView
+            android:id="@+id/textView91"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• Sometimes we want a certain statement to be executed only In some cases or it will be done several times."
+            app:layout_constraintStart_toStartOf="@+id/textView90"
+            app:layout_constraintTop_toBottomOf="@+id/textView90" />
+
+        <TextView
+            android:id="@+id/textView92"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• In the C programming language we have several commands that allow We control the flow of the program."
+            app:layout_constraintStart_toStartOf="@+id/textView91"
+            app:layout_constraintTop_toBottomOf="@+id/textView91" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson_3_conditions"
+            app:layout_constraintStart_toStartOf="@+id/textView92"
+            app:layout_constraintTop_toBottomOf="@+id/textView92" />
+
+        <TextView
+            android:id="@+id/textView94"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Syntax - if"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/imageView13"
+            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+        <ImageView
+            android:id="@+id/imageView20"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson_3_if"
+            app:layout_constraintStart_toStartOf="@+id/textView94"
+            app:layout_constraintTop_toBottomOf="@+id/textView94" />
+
+        <TextView
+            android:id="@+id/textView95"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="If we had several statements / commands to be executed if The condition is met - we will use the block:"
+            app:layout_constraintStart_toStartOf="@+id/imageView20"
+            app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson_3_ifmultistatements"
+            app:layout_constraintStart_toStartOf="@+id/textView95"
+            app:layout_constraintTop_toBottomOf="@+id/textView95" />
+
+        <TextView
+            android:id="@+id/textView96"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_background"
+            android:text="Example"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/imageView22"
+            app:layout_constraintTop_toBottomOf="@+id/imageView22" />
+
+        <TextView
+            android:id="@+id/textView97"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="A program that receives a character and if it has told prints to the user that succeeded:"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView96"
+            app:layout_constraintTop_toBottomOf="@+id/textView96" />
+
+        <ImageView
+            android:id="@+id/imageView24"
+            android:layout_width="375dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson3_ifexample"
+            app:layout_constraintStart_toStartOf="@+id/textView97"
+            app:layout_constraintTop_toBottomOf="@+id/textView97" />
+
+        <TextView
+            android:id="@+id/textView98"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="else-if Syntax"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/imageView24"
+            app:layout_constraintTop_toBottomOf="@+id/imageView24" />
+
+        <TextView
+            android:id="@+id/textView99"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="• in a similar way to 'if':"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView98"
+            app:layout_constraintTop_toBottomOf="@+id/textView98" />
+
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="375dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson3_ifelse"
+            app:layout_constraintStart_toStartOf="@+id/textView99"
+            app:layout_constraintTop_toBottomOf="@+id/textView99" />
+
+        <TextView
+            android:id="@+id/textView100"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_background"
+            android:text="Example"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/imageView26"
+            app:layout_constraintTop_toBottomOf="@+id/imageView26" />
+
+        <ImageView
+            android:id="@+id/imageView28"
+            android:layout_width="375dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson3_ifelse_example"
+            app:layout_constraintStart_toStartOf="@+id/textView100"
+            app:layout_constraintTop_toBottomOf="@+id/textView100" />
+
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Important points regarding the conditions:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/imageView28"
+            app:layout_constraintTop_toBottomOf="@+id/imageView28" />
+
+        <TextView
+            android:id="@+id/textView102"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• 'else' always refers to the closest last 'if', which does not exist If the 'else' instruction closes. Unless there are brackets who say otherwise."
+            app:layout_constraintStart_toStartOf="@+id/textView101"
+            app:layout_constraintTop_toBottomOf="@+id/textView101" />
+
+        <TextView
+            android:id="@+id/textView103"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• Correct indentation of the text is very important For reading the code!"
+            app:layout_constraintStart_toStartOf="@+id/textView102"
+            app:layout_constraintTop_toBottomOf="@+id/textView102" />
+
+        <TextView
+            android:id="@+id/textView104"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• The 'else-if' statement is a single statement, so there is no need Brackets {} around this instruction when it is part of an instruction more complex."
+            app:layout_constraintStart_toStartOf="@+id/textView103"
+            app:layout_constraintTop_toBottomOf="@+id/textView103" />
+
+        <TextView
+            android:id="@+id/textView105"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Useful used operators in 'if' - Relational Operators"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/textView104"
+            app:layout_constraintTop_toBottomOf="@+id/textView104" />
+
+        <TextView
+            android:id="@+id/textView106"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="• The operators:"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView105"
+            app:layout_constraintTop_toBottomOf="@+id/textView105" />
+
+        <TextView
+            android:id="@+id/textView107"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Comparison =="
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView106"
+            app:layout_constraintTop_toBottomOf="@+id/textView106" />
+
+        <TextView
+            android:id="@+id/textView108"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Different !="
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView107"
+            app:layout_constraintTop_toBottomOf="@+id/textView107" />
+
+        <TextView
+            android:id="@+id/textView109"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Big >"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView108"
+            app:layout_constraintTop_toBottomOf="@+id/textView108" />
+
+        <TextView
+            android:id="@+id/textView110"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Small <"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView109"
+            app:layout_constraintTop_toBottomOf="@+id/textView109" />
+
+        <TextView
+            android:id="@+id/textView111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Big equals >="
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView110"
+            app:layout_constraintTop_toBottomOf="@+id/textView110" />
+
+        <TextView
+            android:id="@+id/textView112"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Small equals <="
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView111"
+            app:layout_constraintTop_toBottomOf="@+id/textView111" />
+
+        <TextView
+            android:id="@+id/textView113"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• In the order of precedence: equal and different have the order of precedence The lowest of all relational operators. and all relational operators are have a lower order of precedence than the arithmetic operators."
+            app:layout_constraintStart_toStartOf="@+id/textView112"
+            app:layout_constraintTop_toBottomOf="@+id/textView112" />
+
+        <TextView
+            android:id="@+id/textView114"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• If the relation is true, the value 1 is returned, otherwise 0 is returned"
+            app:layout_constraintStart_toStartOf="@+id/textView113"
+            app:layout_constraintTop_toBottomOf="@+id/textView113" />
+
+        <TextView
+            android:id="@+id/textView115"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_background"
+            android:text="Example"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView114"
+            app:layout_constraintTop_toBottomOf="@+id/textView114" />
+
+        <ImageView
+            android:id="@+id/imageView29"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson3_operatorsexample"
+            app:layout_constraintStart_toStartOf="@+id/textView115"
+            app:layout_constraintTop_toBottomOf="@+id/textView115" />
+
+        <TextView
+            android:id="@+id/textView116"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="• The value of the expression 5<x is false and therefore zero."
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/imageView29"
+            app:layout_constraintTop_toBottomOf="@+id/imageView29" />
+
+        <TextView
+            android:id="@+id/textView117"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="• Therefore the value of y is 1 (0+1)"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView116"
+            app:layout_constraintTop_toBottomOf="@+id/textView116" />
+
+        <TextView
+            android:id="@+id/textView118"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Nested Conditions"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/textView117"
+            app:layout_constraintTop_toBottomOf="@+id/textView117" />
+
+        <TextView
+            android:id="@+id/textView119"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• This is a more complicated structure of conditions."
+            app:layout_constraintStart_toStartOf="@+id/textView118"
+            app:layout_constraintTop_toBottomOf="@+id/textView118" />
+
+        <TextView
+            android:id="@+id/textView120"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• A condition that appears within the declaration body of another, active condition Only if certain conditions were met in the original (main) condition."
+            app:layout_constraintStart_toStartOf="@+id/textView119"
+            app:layout_constraintTop_toBottomOf="@+id/textView119" />
+
+        <TextView
+            android:id="@+id/textView121"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_background"
+            android:text="Example"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView120"
+            app:layout_constraintTop_toBottomOf="@+id/textView120" />
+
+        <ImageView
+            android:id="@+id/imageView31"
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson3_nestedconditionsexample"
+            app:layout_constraintStart_toStartOf="@+id/textView121"
+            app:layout_constraintTop_toBottomOf="@+id/textView121" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
