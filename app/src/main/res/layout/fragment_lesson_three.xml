@@ -300,10 +300,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Small <"
+            android:text="Small &lt;"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView109"
             app:layout_constraintTop_toBottomOf="@+id/textView109" />
+
 
         <TextView
             android:id="@+id/textView111"
@@ -320,10 +321,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Small equals <="
+            android:text="Small equals &lt;="
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView111"
             app:layout_constraintTop_toBottomOf="@+id/textView111" />
+
 
         <TextView
             android:id="@+id/textView113"
@@ -374,10 +376,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="• The value of the expression 5<x is false and therefore zero."
+            android:text="• The value of the expression 5&lt;x is false and therefore zero."
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/imageView29"
             app:layout_constraintTop_toBottomOf="@+id/imageView29" />
+
 
         <TextView
             android:id="@+id/textView117"
@@ -444,6 +447,20 @@
             android:src="@drawable/lesson3_nestedconditionsexample"
             app:layout_constraintStart_toStartOf="@+id/textView121"
             app:layout_constraintTop_toBottomOf="@+id/textView121" />
+
+        <TextView
+            android:id="@+id/lesson3_test"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_bg_scoreboardrow"
+            android:text="Lesson Test"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView31" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
