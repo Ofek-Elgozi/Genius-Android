@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.genius.Model.Model;
 import com.example.genius.Model.User;
 
 
@@ -31,9 +32,9 @@ public class LessonsFragment extends Fragment {
     private String scoreString;
     private int score;
     User u;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_lessons, container, false);
         u = LessonsFragmentArgs.fromBundle(getArguments()).getUser();
@@ -41,10 +42,21 @@ public class LessonsFragment extends Fragment {
         my_lessons_progressBar = view.findViewById(R.id.mylessons_progressBar);
         my_lessons_progressBar.setVisibility(View.GONE);
 
+        // Check if the user is a teacher and update the score to 40 if it is less than 40
+        if (u.getIsTeacher().equals("1") && Integer.parseInt(u.getScore()) < 40) {
+            u.setScore("40");
+            Model.instance.addUser(u, new Model.addUserListener() {
+                @Override
+                public void onComplete() {
+                    // Optionally, handle completion of the user update here
+                    Toast.makeText(getActivity(), "Teacher privileges granted: All lessons unlocked.", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
         lesson_1_btn = view.findViewById(R.id.lesson1_btn);
         lesson_1_btn.setOnClickListener(v -> {
-            if(u != null)
-            {
+            if(u != null) {
                 my_lessons_progressBar.setVisibility(View.VISIBLE);
                 LessonsFragmentDirections.ActionLessonsFragmentToLessonOneFragment action = LessonsFragmentDirections.actionLessonsFragmentToLessonOneFragment(u);
                 Navigation.findNavController(v).navigate(action);
@@ -53,45 +65,36 @@ public class LessonsFragment extends Fragment {
 
         lesson_2_btn = view.findViewById(R.id.lesson2_btn);
         lesson_2_btn.setOnClickListener(v -> {
-            score = Integer.parseInt(scoreString);
-            if(u != null && score >= 10)
-            {
+            score = Integer.parseInt(u.getScore());
+            if(u != null && score >= 10) {
                 my_lessons_progressBar.setVisibility(View.VISIBLE);
                 LessonsFragmentDirections.ActionLessonsFragmentToLessonTwoFragment action = LessonsFragmentDirections.actionLessonsFragmentToLessonTwoFragment(u);
                 Navigation.findNavController(v).navigate(action);
-            }
-            else if(u != null && score < 10)
-            {
+            } else if(u != null && score < 10) {
                 Toast.makeText(getActivity(), "All previous lessons must be successfully done first.", Toast.LENGTH_SHORT).show();
             }
         });
 
         lesson_3_btn = view.findViewById(R.id.lesson3_btn);
         lesson_3_btn.setOnClickListener(v -> {
-            score = Integer.parseInt(scoreString);
-            if(u != null && score >= 20)
-            {
+            score = Integer.parseInt(u.getScore());
+            if(u != null && score >= 20) {
                 my_lessons_progressBar.setVisibility(View.VISIBLE);
                 LessonsFragmentDirections.ActionLessonsFragmentToLessonThreeFragment action = LessonsFragmentDirections.actionLessonsFragmentToLessonThreeFragment(u);
                 Navigation.findNavController(v).navigate(action);
-            }
-            else if(u != null && score < 20)
-            {
+            } else if(u != null && score < 20) {
                 Toast.makeText(getActivity(), "All previous lessons must be successfully done first.", Toast.LENGTH_SHORT).show();
             }
         });
 
         lesson_4_btn = view.findViewById(R.id.lesson4_btn);
         lesson_4_btn.setOnClickListener(v -> {
-            score = Integer.parseInt(scoreString);
-            if(u != null && score >= 30)
-            {
+            score = Integer.parseInt(u.getScore());
+            if(u != null && score >= 30) {
                 my_lessons_progressBar.setVisibility(View.VISIBLE);
                 LessonsFragmentDirections.ActionLessonsFragmentToLessonFourFragment action = LessonsFragmentDirections.actionLessonsFragmentToLessonFourFragment(u);
                 Navigation.findNavController(v).navigate(action);
-            }
-            else if(u != null && score < 30)
-            {
+            } else if(u != null && score < 30) {
                 Toast.makeText(getActivity(), "All previous lessons must be successfully done first.", Toast.LENGTH_SHORT).show();
             }
         });
