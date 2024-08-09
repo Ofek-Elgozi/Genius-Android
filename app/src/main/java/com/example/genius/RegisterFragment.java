@@ -194,28 +194,70 @@ public class RegisterFragment extends Fragment {
         phoneEt.setText("Phone");
     }
 
-    private boolean validate()
-    {
-        if(nameET.getText().length() < 3)
-        {
-            Toast.makeText(getActivity(), "Name Invaild!", Toast.LENGTH_SHORT).show();
+    private boolean validate() {
+        String name = nameET.getText().toString().trim();
+        String email = emailEt.getText().toString().trim();
+        String password = passwordEt.getText().toString().trim();
+        String phone = phoneEt.getText().toString().trim();
+
+        // Validate Name
+        if (name.isEmpty()) {
+            nameET.setError("Name is required");
+            Toast.makeText(getActivity(), "Name is required", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (name.length() < 2) {
+            nameET.setError("Name must be at least 2 characters");
+            Toast.makeText(getActivity(), "Name must be at least 2 characters", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (name.length() >= 15) {
+            nameET.setError("Name must be less than or equal to 14 characters");
+            Toast.makeText(getActivity(), "Name must be less than 14 characters", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (!name.matches("[a-zA-Z\\s]+")) {  // Check for letters and spaces only
+            nameET.setError("Name must contain only letters");
+            Toast.makeText(getActivity(), "Name must contain only letters", Toast.LENGTH_SHORT).show();
             return false;
         }
-        else if (passwordEt.getText().length() < 6)
-        {
-            Toast.makeText(getActivity(), "Password Invaild!", Toast.LENGTH_SHORT).show();
+
+        // Validate Email
+        if (email.isEmpty()) {
+            emailEt.setError("Email is required");
+            Toast.makeText(getActivity(), "Email is required", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (!email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
+            emailEt.setError("Invalid email format");
+            Toast.makeText(getActivity(), "Invalid email format", Toast.LENGTH_SHORT).show();
             return false;
         }
-        else if (emailEt.getText().length() < 3)
-        {
-            Toast.makeText(getActivity(), "Email Invaild!", Toast.LENGTH_SHORT).show();
+
+        // Validate Password
+        if (password.isEmpty()) {
+            passwordEt.setError("Password is required");
+            Toast.makeText(getActivity(), "Password is required", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (password.length() < 6) {
+            passwordEt.setError("Password must be at least 6 characters");
+            Toast.makeText(getActivity(), "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
             return false;
         }
-        else if (phoneEt.getText().length()!=10)
-        {
-            Toast.makeText(getActivity(), "Phone Invalid!", Toast.LENGTH_SHORT).show();
+
+        // Validate Phone
+        if (phone.isEmpty()) {
+            phoneEt.setError("Phone number is required");
+            Toast.makeText(getActivity(), "Phone number is required", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (phone.length() != 10) {
+            phoneEt.setError("Phone number must be exactly 10 digits");
+            Toast.makeText(getActivity(), "Phone number must be exactly 10 digits", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (!phone.matches("\\d{10}")) {
+            phoneEt.setError("Phone number must contain only digits");
+            Toast.makeText(getActivity(), "Phone number must contain only digits", Toast.LENGTH_SHORT).show();
             return false;
         }
-        return true;
+
+        return true; // All validations passed
     }
+
+
 }

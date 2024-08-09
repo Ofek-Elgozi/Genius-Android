@@ -186,10 +186,35 @@ public class LoginFragment extends Fragment {
         passwordEt.setText("Password");
     }
 
-    private boolean validate()
-    {
-        return (emailEt.getText().length() > 2 && passwordEt.getText().length() > 5);
+    private boolean validate() {
+        String email = emailEt.getText().toString().trim();
+        String password = passwordEt.getText().toString().trim();
+
+        // Validate email
+        if (email.isEmpty()) {
+            emailEt.setError("Email is required");
+            Toast.makeText(getActivity(), "Email is required", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (!email.contains("@") || email.startsWith("@") || email.endsWith("@")) {
+            emailEt.setError("Invalid email format");
+            Toast.makeText(getActivity(), "Invalid email format", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        // Validate password
+        if (password.isEmpty()) {
+            passwordEt.setError("Password is required");
+            Toast.makeText(getActivity(), "Password is required", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (password.length() < 6) {
+            passwordEt.setError("Password must be at least 6 characters");
+            Toast.makeText(getActivity(), "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true; // Validation passed
     }
+
 
     private void validateUser(View v)
     {
