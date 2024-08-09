@@ -462,5 +462,389 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView31" />
 
+        <TextView
+            android:id="@+id/textView93"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Question 1: What will be the output of the following code?"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/imageView31"
+            app:layout_constraintTop_toBottomOf="@+id/lesson3_test" />
+
+        <ImageView
+            android:id="@+id/imageView23"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/lesson3_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView93"
+            app:layout_constraintTop_toBottomOf="@+id/textView93" />
+
+        <RadioButton
+            android:id="@+id/radioButton20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="A)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView93"
+            app:layout_constraintTop_toBottomOf="@+id/imageView23" />
+
+        <RadioButton
+            android:id="@+id/radioButton21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="B)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton20"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton20" />
+
+        <RadioButton
+            android:id="@+id/radioButton22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="C)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton21"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton21" />
+
+        <RadioButton
+            android:id="@+id/radioButton23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="D)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton22"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton22" />
+
+        <TextView
+            android:id="@+id/textView122"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Greater than 5"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton20"
+            app:layout_constraintStart_toEndOf="@+id/radioButton20"
+            app:layout_constraintTop_toTopOf="@+id/radioButton20" />
+
+        <TextView
+            android:id="@+id/textView123"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Less than or equal to 5"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton21"
+            app:layout_constraintStart_toEndOf="@+id/radioButton21"
+            app:layout_constraintTop_toTopOf="@+id/radioButton21" />
+
+        <TextView
+            android:id="@+id/textView124"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="10"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton22"
+            app:layout_constraintStart_toEndOf="@+id/radioButton22"
+            app:layout_constraintTop_toTopOf="@+id/radioButton22" />
+
+        <TextView
+            android:id="@+id/textView125"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="No output"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton23"
+            app:layout_constraintStart_toEndOf="@+id/radioButton23"
+            app:layout_constraintTop_toTopOf="@+id/radioButton23"
+            app:layout_constraintVertical_bias="0.517" />
+
+        <TextView
+            android:id="@+id/textView126"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Question 2: What is wrong with the following code?"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/radioButton23"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton23" />
+
+        <ImageView
+            android:id="@+id/imageView25"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/lesson3_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView126"
+            app:layout_constraintTop_toBottomOf="@+id/textView126" />
+
+        <RadioButton
+            android:id="@+id/radioButton24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="A)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView126"
+            app:layout_constraintTop_toBottomOf="@+id/imageView25" />
+
+        <RadioButton
+            android:id="@+id/radioButton25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="B)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton24"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton24" />
+
+        <RadioButton
+            android:id="@+id/radioButton26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="C)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton25"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton25" />
+
+        <RadioButton
+            android:id="@+id/radioButton27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="D)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton26"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton26" />
+
+        <TextView
+            android:id="@+id/textView127"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="The if condition is incorrect."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton24"
+            app:layout_constraintStart_toEndOf="@+id/radioButton24"
+            app:layout_constraintTop_toTopOf="@+id/radioButton24" />
+
+        <TextView
+            android:id="@+id/textView128"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="The 'else' block should have braces '{}'."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton25"
+            app:layout_constraintStart_toEndOf="@+id/radioButton25"
+            app:layout_constraintTop_toTopOf="@+id/radioButton25" />
+
+        <TextView
+            android:id="@+id/textView129"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="There should be no semicolon after 'else'."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton26"
+            app:layout_constraintStart_toEndOf="@+id/radioButton26"
+            app:layout_constraintTop_toTopOf="@+id/radioButton26" />
+
+        <TextView
+            android:id="@+id/textView130"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="The variable x is not initialized."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton27"
+            app:layout_constraintStart_toEndOf="@+id/radioButton27"
+            app:layout_constraintTop_toTopOf="@+id/radioButton27"
+            app:layout_constraintVertical_bias="0.517" />
+
+        <TextView
+            android:id="@+id/textView131"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Question 3: What is wrong with the following code?"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/radioButton27"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton27" />
+
+        <ImageView
+            android:id="@+id/imageView30"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/lesson3_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView131"
+            app:layout_constraintTop_toBottomOf="@+id/textView131" />
+
+        <RadioButton
+            android:id="@+id/radioButton28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="A)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView131"
+            app:layout_constraintTop_toBottomOf="@+id/imageView30" />
+
+        <RadioButton
+            android:id="@+id/radioButton29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="B)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton28"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton28" />
+
+        <RadioButton
+            android:id="@+id/radioButton30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="C)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton29"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton29" />
+
+        <RadioButton
+            android:id="@+id/radioButton31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="D)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton30"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton30" />
+
+        <TextView
+            android:id="@+id/textView132"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="The if condition is incorrect."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton28"
+            app:layout_constraintStart_toEndOf="@+id/radioButton28"
+            app:layout_constraintTop_toTopOf="@+id/radioButton28" />
+
+        <TextView
+            android:id="@+id/textView133"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="The nested if-else blocks are not properly aligned."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton29"
+            app:layout_constraintStart_toEndOf="@+id/radioButton29"
+            app:layout_constraintTop_toTopOf="@+id/radioButton29" />
+
+        <TextView
+            android:id="@+id/textView134"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="There should be braces '{}' around the inner if block."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton30"
+            app:layout_constraintStart_toEndOf="@+id/radioButton30"
+            app:layout_constraintTop_toTopOf="@+id/radioButton30" />
+
+        <TextView
+            android:id="@+id/textView135"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="The else block is not properly closed."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton31"
+            app:layout_constraintStart_toEndOf="@+id/radioButton31"
+            app:layout_constraintTop_toTopOf="@+id/radioButton31"
+            app:layout_constraintVertical_bias="0.517" />
+
+        <TextView
+            android:id="@+id/link_click_msg_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:text="Click here and try running those questions alone to see how it works!"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/lesson3_done_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="28dp"
+            android:text="Done"
+            android:background="@drawable/rounded_bg_scoreboardrow"
+            app:layout_constraintBottom_toTopOf="@+id/link_click_msg_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView135" />
+
+        <ProgressBar
+            android:id="@+id/lesson3_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView131" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
