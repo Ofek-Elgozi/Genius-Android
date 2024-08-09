@@ -136,7 +136,7 @@ public class LessonThreeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (radioButton20.isChecked() && radioButton26.isChecked() && radioButton29.isChecked()) {
-                    if(currentScore < 20 && currentScore >=10) {
+                    if(currentScore < 30 && currentScore >=20) {
                         user.setScore(String.valueOf(currentScore + 10));
                         Model.instance.addUser(user, new Model.addUserListener() {
                             @Override
