@@ -34,7 +34,7 @@ import com.example.genius.Model.User;
 public class LessonThreeFragment extends Fragment {
     View view;
     User user;
-    private static final String TAG = "LessonTwoFragment";
+    private static final String TAG = "LessonThreeFragment";
 
     RadioButton radioButton20, radioButton21, radioButton22, radioButton23 ,radioButton24, radioButton25 , radioButton26
             , radioButton27, radioButton28 , radioButton29, radioButton30, radioButton31;
