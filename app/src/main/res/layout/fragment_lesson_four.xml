@@ -258,7 +258,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="#575757"
-            android:text="for(c=‘A’ ; c<=‘Z’; c++) {…} "
+            android:text="for(c=‘A’ ; c&lt;=‘Z’; c++) {…}"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView154"
             app:layout_constraintTop_toBottomOf="@+id/textView154" />
@@ -290,7 +290,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="#575757"
-            android:text="for (i = 11.1, j = 22.2 ; i<j && j>=15 ; i*=2, j--) {…} "
+            android:text="for (i = 11.1, j = 22.2 ; i&lt;j &amp;&amp; j&gt;=15 ; i*=2, j--) {…}"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView157"
             app:layout_constraintTop_toBottomOf="@+id/textView157" />
@@ -322,7 +322,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="#575757"
-            android:text="for(; i<20; ) {i++; } "
+            android:text="for(; i&lt;20; ) {i++; }"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView160"
             app:layout_constraintTop_toBottomOf="@+id/textView160" />
@@ -430,7 +430,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="#575757"
-            android:text="while(i<3) {"
+            android:text="while(i&lt;3) {"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView169"
             app:layout_constraintTop_toBottomOf="@+id/textView169" />
