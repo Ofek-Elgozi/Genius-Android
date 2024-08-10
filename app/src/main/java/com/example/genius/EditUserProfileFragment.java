@@ -126,24 +126,26 @@ public class EditUserProfileFragment extends Fragment {
         Button cancelBtn = view.findViewById(R.id.edit_cancel_btn);
 
         saveBtn.setOnClickListener(v -> {
-            progressBar.setVisibility(View.VISIBLE);
-            cancelBtn.setEnabled(false);
-            text_name.setEnabled(false);
-            text_phone.setEnabled(false);
-            text_group.setEnabled(false);
-            editImageBtn.setEnabled(false);
+            if (validate()) {
+                progressBar.setVisibility(View.VISIBLE);
+                cancelBtn.setEnabled(false);
+                text_name.setEnabled(false);
+                text_phone.setEnabled(false);
+                text_group.setEnabled(false);
+                editImageBtn.setEnabled(false);
 
-            temp_name = text_name.getText().toString();
-            temp_phone = text_phone.getText().toString();
-            temp_group = text_group.getText().toString();
+                temp_name = text_name.getText().toString();
+                temp_phone = text_phone.getText().toString();
+                temp_group = text_group.getText().toString();
 
-            if (bitmap != null) {
-                Model.instance.saveImage(bitmap, user.getEmail(), url -> {
-                    temp_url = url;
-                    saveUser(temp_url);
-                });
-            } else {
-                saveUser(user.getAvatarUrl());
+                if (bitmap != null) {
+                    Model.instance.saveImage(bitmap, user.getEmail(), url -> {
+                        temp_url = url;
+                        saveUser(temp_url);
+                    });
+                } else {
+                    saveUser(user.getAvatarUrl());
+                }
             }
         });
 
@@ -170,6 +172,47 @@ public class EditUserProfileFragment extends Fragment {
         text_email.setText(user.getEmail());
         text_phone.setText(user.getPhone());
         text_group.setText(user.getGroup());
+    }
+
+    private boolean validate() {
+        String name = text_name.getText().toString().trim();
+        String phone = text_phone.getText().toString().trim();
+
+        // Validate Name
+        if (name.isEmpty()) {
+            text_name.setError("Name is required");
+            Toast.makeText(getActivity(), "Name is required", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (name.length() < 2) {
+            text_name.setError("Name must be at least 2 characters");
+            Toast.makeText(getActivity(), "Name must be at least 2 characters", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (name.length() >= 15) {
+            text_name.setError("Name must be less than or equal to 14 characters");
+            Toast.makeText(getActivity(), "Name must be less than or equal to 14 characters", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (!name.matches("[a-zA-Z\\s]+")) {
+            text_name.setError("Name must contain only letters");
+            Toast.makeText(getActivity(), "Name must contain only letters", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        // Validate Phone
+        if (phone.isEmpty()) {
+            text_phone.setError("Phone number is required");
+            Toast.makeText(getActivity(), "Phone number is required", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (phone.length() != 10) {
+            text_phone.setError("Phone number must be exactly 10 digits");
+            Toast.makeText(getActivity(), "Phone number must be exactly 10 digits", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (!phone.matches("\\d{10}")) {
+            text_phone.setError("Phone number must contain only digits");
+            Toast.makeText(getActivity(), "Phone number must contain only digits", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true; // All validations passed
     }
 
     private void saveUser(String avatarUrl) {
