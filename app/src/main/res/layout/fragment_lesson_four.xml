@@ -214,8 +214,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="int i;"
-            android:textColor="#03A9F4"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView150"
             app:layout_constraintTop_toBottomOf="@+id/textView150" />
 
@@ -224,8 +225,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="for(i=20 ; i>0; i/=2) {…}"
-            android:textColor="#03A9F4"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView151"
             app:layout_constraintTop_toBottomOf="@+id/textView151" />
 
@@ -244,8 +246,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="char c;"
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView153"
             app:layout_constraintTop_toBottomOf="@+id/textView153" />
 
@@ -254,8 +257,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="for(c=‘A’ ; c<=‘Z’; c++) {…} "
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView154"
             app:layout_constraintTop_toBottomOf="@+id/textView154" />
 
@@ -274,8 +278,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="double i, j; "
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView156"
             app:layout_constraintTop_toBottomOf="@+id/textView156" />
 
@@ -284,8 +289,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="for (i = 11.1, j = 22.2 ; i<j && j>=15 ; i*=2, j--) {…} "
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView157"
             app:layout_constraintTop_toBottomOf="@+id/textView157" />
 
@@ -304,8 +310,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="int i = 10; "
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView159"
             app:layout_constraintTop_toBottomOf="@+id/textView159" />
 
@@ -314,8 +321,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="for(; i<20; ) {i++; } "
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView160"
             app:layout_constraintTop_toBottomOf="@+id/textView160" />
 
@@ -410,8 +418,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="int i = 0; "
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView168"
             app:layout_constraintTop_toBottomOf="@+id/textView168" />
 
@@ -420,8 +429,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="while(i<3) {"
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView169"
             app:layout_constraintTop_toBottomOf="@+id/textView169" />
 
@@ -430,8 +440,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="        printf(“number %d hello world ” , i); "
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView170"
             app:layout_constraintTop_toBottomOf="@+id/textView170" />
 
@@ -440,8 +451,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="        i++;"
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView171"
             app:layout_constraintTop_toBottomOf="@+id/textView171" />
 
@@ -450,8 +462,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#575757"
             android:text="}"
-            android:textColor="#2196F3"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView172"
             app:layout_constraintTop_toBottomOf="@+id/textView172" />
 
@@ -479,9 +492,274 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView175" />
 
-        <!-- Example Content -->
+        <TextView
+            android:id="@+id/textView177"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Question 1: What is the missing line that should be added in the code to correctly count the number of digits?"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/textView175"
+            app:layout_constraintTop_toBottomOf="@+id/lesson4_test" />
 
-        <!-- Add more content as needed -->
+        <ImageView
+            android:id="@+id/imageView36"
+            android:layout_width="375dp"
+            android:layout_height="375dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson4_1"
+            app:layout_constraintStart_toStartOf="@+id/textView177"
+            app:layout_constraintTop_toBottomOf="@+id/textView177" />
+
+        <RadioButton
+            android:id="@+id/radioButton32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="A)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView177"
+            app:layout_constraintTop_toBottomOf="@+id/imageView36" />
+
+        <RadioButton
+            android:id="@+id/radioButton33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="B)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton32"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton32" />
+
+        <RadioButton
+            android:id="@+id/radioButton34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="C)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton33"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton33" />
+
+        <RadioButton
+            android:id="@+id/radioButton35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="D)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton34"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton34" />
+
+        <TextView
+            android:id="@+id/textView178"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="'count++;'"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton32"
+            app:layout_constraintStart_toEndOf="@+id/radioButton32"
+            app:layout_constraintTop_toTopOf="@+id/radioButton32" />
+
+        <TextView
+            android:id="@+id/textView179"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="'count = num;'"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton33"
+            app:layout_constraintStart_toEndOf="@+id/radioButton33"
+            app:layout_constraintTop_toTopOf="@+id/radioButton33" />
+
+        <TextView
+            android:id="@+id/textView180"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="'num++;'"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton34"
+            app:layout_constraintStart_toEndOf="@+id/radioButton34"
+            app:layout_constraintTop_toTopOf="@+id/radioButton34" />
+
+        <TextView
+            android:id="@+id/textView181"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="'num = count;'"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton35"
+            app:layout_constraintStart_toEndOf="@+id/radioButton35"
+            app:layout_constraintTop_toTopOf="@+id/radioButton35"
+            app:layout_constraintVertical_bias="0.517" />
+
+        <TextView
+            android:id="@+id/textView182"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Question 2: What is the missing line that should be added in the code to correctly calculate the sum of the digits?"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/radioButton35"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton35" />
+
+        <ImageView
+            android:id="@+id/imageView38"
+            android:layout_width="375dp"
+            android:layout_height="375dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson4_2"
+            app:layout_constraintStart_toStartOf="@+id/textView182"
+            app:layout_constraintTop_toBottomOf="@+id/textView182" />
+
+        <RadioButton
+            android:id="@+id/radioButton36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="A)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView182"
+            app:layout_constraintTop_toBottomOf="@+id/imageView38" />
+
+        <RadioButton
+            android:id="@+id/radioButton37"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="B)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton36"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton36" />
+
+        <RadioButton
+            android:id="@+id/radioButton38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="C)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton37"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton37" />
+
+        <RadioButton
+            android:id="@+id/radioButton39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="D)"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioButton38"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton38" />
+
+        <TextView
+            android:id="@+id/textView183"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="'sum += num;'"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton36"
+            app:layout_constraintStart_toEndOf="@+id/radioButton36"
+            app:layout_constraintTop_toTopOf="@+id/radioButton36" />
+
+        <TextView
+            android:id="@+id/textView184"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="'sum += num % 10;'"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton37"
+            app:layout_constraintStart_toEndOf="@+id/radioButton37"
+            app:layout_constraintTop_toTopOf="@+id/radioButton37" />
+
+        <TextView
+            android:id="@+id/textView185"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="'num--;'"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton38"
+            app:layout_constraintStart_toEndOf="@+id/radioButton38"
+            app:layout_constraintTop_toTopOf="@+id/radioButton38" />
+
+        <TextView
+            android:id="@+id/textView186"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="'sum = num;'"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton39"
+            app:layout_constraintStart_toEndOf="@+id/radioButton39"
+            app:layout_constraintTop_toTopOf="@+id/radioButton39"
+            app:layout_constraintVertical_bias="0.517" />
+
+        <TextView
+            android:id="@+id/link_click_msg_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:text="Click here and try running those questions alone to see how it works!"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/lesson4_done_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="28dp"
+            android:text="Done"
+            android:background="@drawable/rounded_bg_scoreboardrow"
+            app:layout_constraintBottom_toTopOf="@+id/link_click_msg_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView186" />
+
+        <ProgressBar
+            android:id="@+id/lesson4_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView182" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
