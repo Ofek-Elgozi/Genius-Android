@@ -15,32 +15,471 @@
         <!-- Add your content here -->
 
         <!-- Example TextView -->
+
         <TextView
             android:id="@+id/lesson_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Lesson Title"
-            android:textSize="24sp"
+            android:layout_margin="16dp"
+            android:background="@drawable/rounded_bg_scoreboardrow"
+            android:text="Flow Control - Loops"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="16dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView136"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColor="#FFFFFF"
+            android:text="• Used to execute statements (commands) multiple times."
+            app:layout_constraintStart_toStartOf="@+id/lesson_title"
+            app:layout_constraintTop_toBottomOf="@+id/lesson_title" />
+
+        <TextView
+            android:id="@+id/textView137"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• Loops are divided into 2 categories:"
+            app:layout_constraintStart_toStartOf="@+id/textView136"
+            app:layout_constraintTop_toBottomOf="@+id/textView136" />
+
+        <TextView
+            android:id="@+id/textView138"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="Counted loops (counts) - the number of iterations (repetitions) is known in advance. And simply count the iterations until the end."
+            app:layout_constraintStart_toStartOf="@+id/textView137"
+            app:layout_constraintTop_toBottomOf="@+id/textView137" />
+
+        <TextView
+            android:id="@+id/textView139"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="Conditional loops - the number of iterations depends on some condition, And check it every time"
+            app:layout_constraintStart_toStartOf="@+id/textView138"
+            app:layout_constraintTop_toBottomOf="@+id/textView138" />
+
+        <TextView
+            android:id="@+id/textView140"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="'For' Loop"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/textView139"
+            app:layout_constraintTop_toBottomOf="@+id/textView139" />
+
+        <TextView
+            android:id="@+id/textView141"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• This is a counter loop."
+            app:layout_constraintStart_toStartOf="@+id/textView140"
+            app:layout_constraintTop_toBottomOf="@+id/textView140" />
+
+        <TextView
+            android:id="@+id/textView142"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="• Syntax:"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView141"
+            app:layout_constraintTop_toBottomOf="@+id/textView141" />
+
+        <ImageView
+            android:id="@+id/imageView32"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson4_for"
+            app:layout_constraintStart_toStartOf="@+id/textView142"
+            app:layout_constraintTop_toBottomOf="@+id/textView142" />
+
+        <TextView
+            android:id="@+id/textView143"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• Initialization – initialization of the counter. Performed only once upon entry the first for the loop."
+            app:layout_constraintStart_toStartOf="@+id/imageView32"
+            app:layout_constraintTop_toBottomOf="@+id/imageView32" />
+
+        <TextView
+            android:id="@+id/textView144"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• Condition - at the beginning of each iteration there is a test of the condition - if It holds the statements are executed. Otherwise the loop ends and continue to the code that appears after it. Usually the condition is related to the counter."
+            app:layout_constraintStart_toStartOf="@+id/textView143"
+            app:layout_constraintTop_toBottomOf="@+id/textView143" />
+
+        <TextView
+            android:id="@+id/textView145"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• Addition (or subtraction) - to the counter is performed at the end of execution statements, after which we again return to the stage of checking the condition."
+            app:layout_constraintStart_toStartOf="@+id/textView144"
+            app:layout_constraintTop_toBottomOf="@+id/textView144" />
+
+        <TextView
+            android:id="@+id/textView146"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_background"
+            android:text="Example"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/textView145"
+            app:layout_constraintTop_toBottomOf="@+id/textView145" />
+
+        <TextView
+            android:id="@+id/textView147"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• Calculation of the sum of the numbers from 10 to 20"
+            app:layout_constraintStart_toStartOf="@+id/textView146"
+            app:layout_constraintTop_toBottomOf="@+id/textView146" />
+
+        <TextView
+            android:id="@+id/textView148"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="The loop ran an array from 10 to 20 (not including 20)."
+            app:layout_constraintStart_toStartOf="@+id/textView147"
+            app:layout_constraintTop_toBottomOf="@+id/textView147" />
+
+        <ImageView
+            android:id="@+id/imageView33"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson4_forexample"
+            app:layout_constraintStart_toStartOf="@+id/textView148"
+            app:layout_constraintTop_toBottomOf="@+id/textView148" />
+
+        <TextView
+            android:id="@+id/textView149"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="'For'- Comments"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/imageView33"
+            app:layout_constraintTop_toBottomOf="@+id/imageView33" />
+
+        <TextView
+            android:id="@+id/textView150"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• In the add step you can actually use any action mathematically you want."
+            app:layout_constraintStart_toStartOf="@+id/textView149"
+            app:layout_constraintTop_toBottomOf="@+id/textView149" />
+
+        <TextView
+            android:id="@+id/textView151"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="int i;"
+            android:textColor="#03A9F4"
+            app:layout_constraintStart_toStartOf="@+id/textView150"
+            app:layout_constraintTop_toBottomOf="@+id/textView150" />
+
+        <TextView
+            android:id="@+id/textView152"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="for(i=20 ; i>0; i/=2) {…}"
+            android:textColor="#03A9F4"
+            app:layout_constraintStart_toStartOf="@+id/textView151"
+            app:layout_constraintTop_toBottomOf="@+id/textView151" />
+
+        <TextView
+            android:id="@+id/textView153"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• The counter can be of any type (not necessarily int)."
+            app:layout_constraintStart_toStartOf="@+id/textView152"
+            app:layout_constraintTop_toBottomOf="@+id/textView152" />
+
+        <TextView
+            android:id="@+id/textView154"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="char c;"
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView153"
+            app:layout_constraintTop_toBottomOf="@+id/textView153" />
+
+        <TextView
+            android:id="@+id/textView155"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="for(c=‘A’ ; c<=‘Z’; c++) {…} "
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView154"
+            app:layout_constraintTop_toBottomOf="@+id/textView154" />
+
+        <TextView
+            android:id="@+id/textView156"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• In each of the 3 parts, you can register more than one action."
+            app:layout_constraintStart_toStartOf="@+id/textView155"
+            app:layout_constraintTop_toBottomOf="@+id/textView155" />
+
+        <TextView
+            android:id="@+id/textView157"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="double i, j; "
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView156"
+            app:layout_constraintTop_toBottomOf="@+id/textView156" />
+
+        <TextView
+            android:id="@+id/textView158"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="for (i = 11.1, j = 22.2 ; i<j && j>=15 ; i*=2, j--) {…} "
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView157"
+            app:layout_constraintTop_toBottomOf="@+id/textView157" />
+
+        <TextView
+            android:id="@+id/textView159"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• You can leave some (or all) of the sections blank."
+            app:layout_constraintStart_toStartOf="@+id/textView158"
+            app:layout_constraintTop_toBottomOf="@+id/textView158" />
+
+        <TextView
+            android:id="@+id/textView160"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="int i = 10; "
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView159"
+            app:layout_constraintTop_toBottomOf="@+id/textView159" />
+
+        <TextView
+            android:id="@+id/textView161"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="for(; i<20; ) {i++; } "
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView160"
+            app:layout_constraintTop_toBottomOf="@+id/textView160" />
+
+        <TextView
+            android:id="@+id/textView162"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="'While' Loop"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/textView161"
+            app:layout_constraintTop_toBottomOf="@+id/textView161" />
+
+        <ImageView
+            android:id="@+id/imageView34"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lesson4_while"
+            app:layout_constraintStart_toStartOf="@+id/textView162"
+            app:layout_constraintTop_toBottomOf="@+id/textView162" />
+
+        <TextView
+            android:id="@+id/textView163"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• In each iteration, the condition is checked first."
+            app:layout_constraintStart_toStartOf="@+id/imageView34"
+            app:layout_constraintTop_toBottomOf="@+id/imageView34" />
+
+        <TextView
+            android:id="@+id/textView164"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• If the condition is true - the instructions are carried out, otherwise Continue to the code after the loop."
+            app:layout_constraintStart_toStartOf="@+id/textView163"
+            app:layout_constraintTop_toBottomOf="@+id/textView163" />
+
+        <TextView
+            android:id="@+id/textView165"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• The loop code must affect the condition itself otherwise Stuck in an infinite loop."
+            app:layout_constraintStart_toStartOf="@+id/textView164"
+            app:layout_constraintTop_toBottomOf="@+id/textView164" />
+
+        <TextView
+            android:id="@+id/textView166"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:text="• The while loop is mainly good for cases where we want to perform all kinds of actions an unknown number of times (and possible). Not at all!"
+            app:layout_constraintStart_toStartOf="@+id/textView165"
+            app:layout_constraintTop_toBottomOf="@+id/textView165" />
+
+        <TextView
+            android:id="@+id/textView167"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_background"
+            android:text="Example"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/textView166"
+            app:layout_constraintTop_toBottomOf="@+id/textView166" />
+
+        <TextView
+            android:id="@+id/textView168"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="• Printing the string &quot;world Hello&quot; with the iteration number."
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView167"
+            app:layout_constraintTop_toBottomOf="@+id/textView167" />
+
+        <TextView
+            android:id="@+id/textView169"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="int i = 0; "
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView168"
+            app:layout_constraintTop_toBottomOf="@+id/textView168" />
+
+        <TextView
+            android:id="@+id/textView170"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="while(i<3) {"
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView169"
+            app:layout_constraintTop_toBottomOf="@+id/textView169" />
+
+        <TextView
+            android:id="@+id/textView171"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="        printf(“number %d hello world ” , i); "
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView170"
+            app:layout_constraintTop_toBottomOf="@+id/textView170" />
+
+        <TextView
+            android:id="@+id/textView172"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="        i++;"
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView171"
+            app:layout_constraintTop_toBottomOf="@+id/textView171" />
+
+        <TextView
+            android:id="@+id/textView173"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="}"
+            android:textColor="#2196F3"
+            app:layout_constraintStart_toStartOf="@+id/textView172"
+            app:layout_constraintTop_toBottomOf="@+id/textView172" />
+
+        <TextView
+            android:id="@+id/textView175"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Note: If the variable is not initialized at the beginning then we will have to ask the user to give us input before we enter the loop"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/textView173"
+            app:layout_constraintTop_toBottomOf="@+id/textView173" />
+
+        <TextView
+            android:id="@+id/lesson4_test"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_bg_scoreboardrow"
+            android:text="Lesson Test"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView175" />
 
         <!-- Example Content -->
-        <TextView
-            android:id="@+id/lesson_content"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_marginBottom="691dp"
-            android:text="This is the content of the lesson. Add as much text as you need here."
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lesson_title" />
 
         <!-- Add more content as needed -->
 
