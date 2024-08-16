@@ -28,6 +28,7 @@
         android:id="@+id/textView39"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:text="• printf - responsible for the output"
         android:textColor="#FFFFFF"
@@ -116,7 +117,6 @@
         android:layout_marginTop="16dp"
         android:scaleType="fitXY"
         android:src="@drawable/printf_scanf_example"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView43"
         app:layout_constraintTop_toBottomOf="@+id/textView43" />
 
