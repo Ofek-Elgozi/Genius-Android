@@ -1,20 +1,11 @@
 package com.example.genius;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,29 +16,27 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.genius.Model.Model;
 import com.example.genius.Model.User;
 
-public class LessonOneFragment extends Fragment {
-    private static final String TAG = "LessonOneFragment";
+public class LessonOneP2Fragment extends Fragment {
+    private static final String TAG = "LessonOneP2Fragment";
     View view;
     User user;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_lession_one, container, false);
-        user = LessonOneFragmentArgs.fromBundle(getArguments()).getUser();
-        ImageButton nextpage = view.findViewById(R.id.next_page_l1_p1);
+        view = inflater.inflate(R.layout.fragment_lesson_one_p2, container, false);
+        user = LessonOneP2FragmentArgs.fromBundle(getArguments()).getUser();
+        ImageButton nextpage = view.findViewById(R.id.next_page_l1_p2);
         nextpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(user != null) {
 
-                    LessonOneFragmentDirections.ActionLessonOneFragmentToLessonOneP2Fragment action = LessonOneFragmentDirections.actionLessonOneFragmentToLessonOneP2Fragment(user);
+                    LessonOneP2FragmentDirections.ActionLessonOneP2FragmentToLessonOneP3Fragment action = LessonOneP2FragmentDirections.actionLessonOneP2FragmentToLessonOneP3Fragment(user);
                     Navigation.findNavController(v).navigate(action);
                 }
             }

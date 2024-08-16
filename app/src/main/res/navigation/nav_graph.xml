@@ -121,6 +121,9 @@
         <argument
             android:name="user"
             app:argType="com.example.genius.Model.User" />
+        <action
+            android:id="@+id/action_lessonOneFragment_to_lessonOneP2Fragment"
+            app:destination="@id/lessonOneP2Fragment" />
     </fragment>
     <fragment
         android:id="@+id/lessonTwoFragment"
@@ -148,5 +151,43 @@
         <argument
             android:name="user"
             app:argType="com.example.genius.Model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonOneP2Fragment"
+        android:name="com.example.genius.LessonOneP2Fragment"
+        android:label="fragment_lesson_one_p2"
+        tools:layout="@layout/fragment_lesson_one_p2" >
+        <action
+            android:id="@+id/action_lessonOneP2Fragment_to_lessonOneP3Fragment"
+            app:destination="@id/lessonOneP3Fragment" />
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonOneP3Fragment"
+        android:name="com.example.genius.LessonOneP3Fragment"
+        android:label="fragment_lesson_one_p3"
+        tools:layout="@layout/fragment_lesson_one_p3" >
+        <action
+            android:id="@+id/action_lessonOneP3Fragment_to_lessonOneP4Fragment"
+            app:destination="@id/lessonOneP4Fragment" />
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonOneP4Fragment"
+        android:name="com.example.genius.LessonOneP4Fragment"
+        android:label="fragment_lesson_one_p4"
+        tools:layout="@layout/fragment_lesson_one_p4" >
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
+        <action
+            android:id="@+id/action_lessonOneP4Fragment_to_lessonsFragment"
+            app:destination="@id/lessonsFragment"
+            app:popUpTo="@id/lessonsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
