@@ -133,6 +133,9 @@
         <argument
             android:name="user"
             app:argType="com.example.genius.Model.User" />
+        <action
+            android:id="@+id/action_lessonTwoFragment_to_lessonTwoP2Fragment"
+            app:destination="@id/lessonTwoP2Fragment" />
     </fragment>
     <fragment
         android:id="@+id/lessonThreeFragment"
@@ -189,5 +192,53 @@
             app:destination="@id/lessonsFragment"
             app:popUpTo="@id/lessonsFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonTwoP2Fragment"
+        android:name="com.example.genius.LessonTwoP2Fragment"
+        android:label="fragment_lesson_two_p2"
+        tools:layout="@layout/fragment_lesson_two_p2" >
+        <action
+            android:id="@+id/action_lessonTwoP2Fragment_to_lessonTwoP3Fragment"
+            app:destination="@id/lessonTwoP3Fragment" />
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonTwoP3Fragment"
+        android:name="com.example.genius.LessonTwoP3Fragment"
+        android:label="fragment_lesson_two_p3"
+        tools:layout="@layout/fragment_lesson_two_p3" >
+        <action
+            android:id="@+id/action_lessonTwoP3Fragment_to_lessonTwoP4Fragment"
+            app:destination="@id/lessonTwoP4Fragment" />
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonTwoP4Fragment"
+        android:name="com.example.genius.LessonTwoP4Fragment"
+        android:label="fragment_lesson_two_p4"
+        tools:layout="@layout/fragment_lesson_two_p4" >
+        <action
+            android:id="@+id/action_lessonTwoP4Fragment_to_lessonTwoP5Fragment2"
+            app:destination="@id/lessonTwoP5Fragment2" />
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonTwoP5Fragment2"
+        android:name="com.example.genius.LessonTwoP5Fragment"
+        android:label="fragment_lesson_two_p5"
+        tools:layout="@layout/fragment_lesson_two_p5" >
+        <action
+            android:id="@+id/action_lessonTwoP5Fragment2_to_lessonsFragment"
+            app:destination="@id/lessonsFragment" />
+        <argument
+            android:name="user"
+            app:argType="com.example.genius.Model.User" />
     </fragment>
 </navigation>

@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,6 +24,8 @@ public class LessonOneP3Fragment extends Fragment {
     private static final String TAG = "LessonOneP3Fragment";
     View view;
     User user;
+
+    ProgressBar lesson1_pb_p3;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,13 +33,20 @@ public class LessonOneP3Fragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_lesson_one_p3, container, false);
         user = LessonOneP3FragmentArgs.fromBundle(getArguments()).getUser();
         ImageButton nextpage = view.findViewById(R.id.next_page_l1_p3);
+        lesson1_pb_p3 = view.findViewById(R.id.lesson1_progressBar_p3);
+        lesson1_pb_p3.setVisibility(View.GONE);
         nextpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(user != null) {
-
-                    LessonOneP3FragmentDirections.ActionLessonOneP3FragmentToLessonOneP4Fragment action = LessonOneP3FragmentDirections.actionLessonOneP3FragmentToLessonOneP4Fragment(user);
-                    Navigation.findNavController(v).navigate(action);
+                    lesson1_pb_p3.setVisibility(View.VISIBLE);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            LessonOneP3FragmentDirections.ActionLessonOneP3FragmentToLessonOneP4Fragment action = LessonOneP3FragmentDirections.actionLessonOneP3FragmentToLessonOneP4Fragment(user);
+                            Navigation.findNavController(v).navigate(action);
+                        }
+                    }, 375);
                 }
             }
         });

@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.os.Handler;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -36,7 +37,7 @@ public class LessonOneP4Fragment extends Fragment {
     User user;
     RadioButton radioButton20, radioButton21, radioButton22, radioButton23;
     Button doneBtn;
-    ProgressBar lesson1_pb;
+    ProgressBar lesson1_pb_p4;
     int currentScore;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,8 +51,8 @@ public class LessonOneP4Fragment extends Fragment {
         radioButton22 = view.findViewById(R.id.radioButton22);
         radioButton23 = view.findViewById(R.id.radioButton23);
         doneBtn = view.findViewById(R.id.done_btn);
-        lesson1_pb = view.findViewById(R.id.lesson1_progressBar);
-        lesson1_pb.setVisibility(View.GONE);
+        lesson1_pb_p4 = view.findViewById(R.id.lesson1_progressBar_p4);
+        lesson1_pb_p4.setVisibility(View.GONE);
 
         TextView textView = view.findViewById(R.id.textView46);
         String text = "Click here and try running those questions alone to see how it works!";
@@ -105,9 +106,16 @@ public class LessonOneP4Fragment extends Fragment {
                             }
                         });
                     }
-                    lesson1_pb.setVisibility(View.VISIBLE);
-                    LessonOneP4FragmentDirections.ActionLessonOneP4FragmentToLessonsFragment action = LessonOneP4FragmentDirections.actionLessonOneP4FragmentToLessonsFragment(user);
-                    Navigation.findNavController(v).navigate(action);
+                    if(user != null) {
+                        lesson1_pb_p4.setVisibility(View.VISIBLE);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                LessonOneP4FragmentDirections.ActionLessonOneP4FragmentToLessonsFragment action = LessonOneP4FragmentDirections.actionLessonOneP4FragmentToLessonsFragment(user);
+                                Navigation.findNavController(v).navigate(action);
+                            }
+                        }, 375);
+                    }
                     Log.d(TAG, "Correct! Score: " + user.getScore());
                     Toast.makeText(getActivity(), "Correct! Score: " + user.getScore(), Toast.LENGTH_SHORT).show();
                 }
