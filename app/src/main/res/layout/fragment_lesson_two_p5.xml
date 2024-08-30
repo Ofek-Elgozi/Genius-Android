@@ -102,7 +102,7 @@
 
     <TextView
         android:id="@+id/textView87"
-        android:layout_width="325dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="The division result is stored in an integer variable so we wont get the right answer."
@@ -141,12 +141,14 @@
         android:id="@+id/lesson2_done_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_bg_scoreboardrow"
         android:text="Done"
         app:layout_constraintBottom_toTopOf="@+id/link_click_msg_l2_p5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView89" />
 
     <TextView
         android:id="@+id/link_click_msg_l2_p5"
@@ -158,7 +160,7 @@
         android:text="Click here and try running those questions alone to see how it works!"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

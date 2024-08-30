@@ -265,11 +265,11 @@
 
         <TextView
             android:id="@+id/textView156"
-            android:layout_width="wrap_content"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textColor="#FFFFFF"
             android:text="• In each of the 3 parts, you can register more than one action."
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="@+id/textView155"
             app:layout_constraintTop_toBottomOf="@+id/textView155" />
 
@@ -506,8 +506,8 @@
 
         <ImageView
             android:id="@+id/imageView36"
-            android:layout_width="375dp"
-            android:layout_height="375dp"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson4_1"
@@ -621,8 +621,8 @@
 
         <ImageView
             android:id="@+id/imageView38"
-            android:layout_width="375dp"
-            android:layout_height="375dp"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:src="@drawable/lesson4_2"
@@ -732,7 +732,7 @@
             android:text="Click here and try running those questions alone to see how it works!"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

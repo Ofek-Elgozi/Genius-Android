@@ -137,7 +137,7 @@
 
         <ImageView
             android:id="@+id/imageView24"
-            android:layout_width="375dp"
+            android:layout_width="350dp"
             android:layout_height="250dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
@@ -169,7 +169,7 @@
 
         <ImageView
             android:id="@+id/imageView26"
-            android:layout_width="375dp"
+            android:layout_width="350dp"
             android:layout_height="100dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
@@ -193,7 +193,7 @@
 
         <ImageView
             android:id="@+id/imageView28"
-            android:layout_width="375dp"
+            android:layout_width="350dp"
             android:layout_height="275dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
@@ -669,7 +669,7 @@
 
         <TextView
             android:id="@+id/textView129"
-            android:layout_width="wrap_content"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="There should be no semicolon after 'else'."
@@ -817,7 +817,7 @@
             android:text="Click here and try running those questions alone to see how it works!"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
