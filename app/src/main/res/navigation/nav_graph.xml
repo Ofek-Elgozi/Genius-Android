@@ -76,6 +76,9 @@
         <action
             android:id="@+id/action_lessonsFragment_to_lessonOneFragment"
             app:destination="@id/lessonOneFragment" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/scoreBoardFragment"

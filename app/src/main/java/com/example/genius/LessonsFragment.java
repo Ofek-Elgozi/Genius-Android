@@ -113,7 +113,8 @@ public class LessonsFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemID = item.getItemId();
         if (itemID == R.id.home_menu) {
-            Navigation.findNavController(view).popBackStack();
+            LessonsFragmentDirections.ActionLessonsFragmentToMainPageFragment action = LessonsFragmentDirections.actionLessonsFragmentToMainPageFragment(u.getEmail());
+            Navigation.findNavController(view).navigate(action);
         }
         return true;
     }
